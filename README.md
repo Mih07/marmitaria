@@ -1,16 +1,25 @@
-# React + Vite
+# 🍱 Cardápio Digital - Marmitaria da Déia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um sistema de cardápio interativo desenvolvido para facilitar os pedidos de marmitarias via WhatsApp. O foco principal é a experiência do usuário e a agilidade na escolha de variações de tamanhos.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## 🚀 Funcionalidades
+- **Variação de Preços:** Suporte para múltiplos tamanhos (P, M, G) no mesmo produto.
+- **Carrinho em Tempo Real:** Soma automática de valores conforme o usuário adiciona itens.
+- **Filtros por Categoria:** Navegação rápida entre Marmitas, Bebidas e Acompanhamentos.
+- **Destaques do Dia:** Seção horizontal para promover pratos específicos.
+- **Integração com WhatsApp:** Envio do pedido formatado diretamente para o número do estabelecimento.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tecnologias Utilizadas
+- **React.js** (Biblioteca principal)
+- **Vite** (Build tool rápida)
+- **CSS3** (Layout responsivo e moderno)
+- **Lucide Icons** (Opcional - ícones)
 
-## Expanding the ESLint configuration
+## 📦 Como rodar o projeto
+Para rodar este projeto localmente, siga os passos abaixo:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone o repositório:
+   ```bash
+   git clone [https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git](https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git)
