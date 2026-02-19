@@ -13,10 +13,17 @@ function App() {
   const restaurante = { nome: "Marmitaria da Déia", cor: "#d66458", fone: "5511987593594" };
   
   const produtos = [
-    { id: 1, nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, linguiça refogada com batata.", imagem: "/opcao1.png" },
-    { id: 2, nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e filé de frango grelhado.", imagem: "/opcao2.png" },
-    { id: 3, nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Feijoada.", imagem: "/opcao3.png" }, 
-    { id: 4, nome: "Coca-Cola", precoFixo: 7.00, categoria: "Bebidas", destaque: true, desc: "Lata 350ml gelada.", imagem: "/coca-cola.png" },
+    { id: 1, nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, costela ao molho cremoso. ", imagem: "/costela-molho.png" },
+    { id: 2, nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e isca de tilápia empanada.", imagem: "/isca-tilapia.png" },
+    { id: 3, nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e filé acebolado.", imagem: "/file-acebolado.png" }, 
+    { id: 4, nome: "Coca-Cola", precoFixo: 6.00, categoria: "Bebidas", destaque: true, desc: "Lata 350ml gelada.", imagem: "/coca-cola.png" },
+    { id: 5, nome: "Guaraná", precoFixo: 6.00, categoria: "Bebidas", destaque: false, desc: "Lata 350ml gelada.", imagem: "/guarana.png" },
+    { id: 6, nome: "Sprite", precoFixo: 6.00, categoria: "Bebidas", destaque: false, desc: "Lata 350ml gelada.", imagem: "/sprite.png" },
+    { id: 7, nome: "Fanta Laranja", precoFixo: 6.00, categoria: "Bebidas", destaque: false, desc: "Lata 350ml gelada.", imagem: "/fanta-laranja.png" },
+    { id: 8, nome: "H2O", precoFixo: 6.00, categoria: "Bebidas", destaque: false, desc: "Lata 350ml gelada.", imagem: "/h2o.png" },
+    { id: 9, nome: "Coca-Cola 2L ", precoFixo: 14.00, categoria: "Bebidas", destaque: false, desc: "Garrafa 2 litros.", imagem: "/coca-cola2.png" },
+    { id: 10, nome: "Guaraná 2L ", precoFixo: 12.00, categoria: "Bebidas", destaque: false, desc: "Garrafa 2 litros.", imagem: "/guarana2.png" },
+    { id: 11, nome: "Skol ", precoFixo: 5.00, categoria: "Cervejas", destaque: false, desc: "Lata 350 ml gelada.", imagem: "/skol.png" },
   ];
 
   // --- FUNÇÕES ---
@@ -99,7 +106,7 @@ function App() {
 
         {/* 2. FILTRO DE CATEGORIAS */}
         <nav className="filtros">
-          {['Todos', 'Marmitas', 'Bebidas'].map(cat => (
+          {['Todos', 'Marmitas', 'Bebidas', 'Cervejas'].map(cat => (
             <button 
               key={cat}
               className={categoriaAtiva === cat ? 'active' : ''} 
@@ -110,38 +117,58 @@ function App() {
           ))}
         </nav>
 
-        {/* 3. LISTA FILTRADA */}
-        <section className="lista-produtos">
-          {produtos
-            .filter(p => categoriaAtiva === 'Todos' || p.categoria === categoriaAtiva)
-            .map((item) => (
-              <div key={item.id} className="card-produto-compacto">
-                <div className="info-texto">
-                  <h3>{item.nome}</h3>
-                  <p>{item.desc}</p>
-                  
-                  {item.categoria === "Marmitas" ? (
-                    <>
-                      <strong>A partir de R$ {item.precos.P.toFixed(2)}</strong>
-                      <div className="seletor-tamanhos-mini">
-                        <button onClick={() => adicionarAoCarrinho(item, 'P')}>P</button>
-                        <button onClick={() => adicionarAoCarrinho(item, 'M')}>M</button>
-                        <button onClick={() => adicionarAoCarrinho(item, 'G')}>G</button>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <strong>R$ {item.precoFixo.toFixed(2)}</strong>
-                      <button className="btn-add-simples" onClick={() => adicionarAoCarrinho(item)}>Adicionar +</button>
-                    </>
-                  )}
-                </div>
-                <div className="area-foto">
-                  <img src={item.imagem} alt={item.nome} />
-                </div>
+{/* 3. LISTA FILTRADA AGRUPADA */}
+<section className="lista-produtos">
+  {['Marmitas', 'Bebidas', 'Cervejas']
+    .filter(cat => categoriaAtiva === 'Todos' || categoriaAtiva === cat)
+    .map(categoria => {
+      // Filtra os produtos desta categoria específica
+      const produtosDaCategoria = produtos.filter(p => p.categoria === categoria);
+      
+      // Se não houver produtos na categoria (e não for "Todos"), não renderiza o título
+      if (produtosDaCategoria.length === 0) return null;
+
+      return (
+        <div key={categoria} className="grupo-categoria">
+          <h2 className="titulo-categoria-lista">{categoria}
+            {categoria === "Marmitas" && (
+              <span className="acompanhamento do dia"> 
+              (Acompanhamento: Legumes refogado / Purê de batata.)</span>
+            )}
+          </h2>
+          
+          {produtosDaCategoria.map((item) => (
+            <div key={item.id} className="card-produto-compacto">
+              <div className="area-foto">
+                <img src={item.imagem} alt={item.nome} />
               </div>
-            ))}
-        </section>
+              
+              <div className="info-texto">
+                <h3>{item.nome}</h3>
+                <p>{item.desc}</p>
+                
+                {item.categoria === "Marmitas" ? (
+                  <div className="acoes-marmita">
+                    <strong>R$ {item.precos.P.toFixed(2)}</strong>
+                    <div className="seletor-tamanhos-mini">
+                      <button onClick={() => adicionarAoCarrinho(item, 'P')}>P</button>
+                      <button onClick={() => adicionarAoCarrinho(item, 'M')}>M</button>
+                      <button onClick={() => adicionarAoCarrinho(item, 'G')}>G</button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="acoes-bebida">
+                    <strong>R$ {item.precoFixo.toFixed(2)}</strong>
+                    <button className="btn-add-simples" onClick={() => adicionarAoCarrinho(item)}>+</button>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    })}
+</section>
       </main>
 
       {/* FOOTER / CARRINHO */}

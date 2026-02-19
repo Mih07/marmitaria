@@ -56,7 +56,28 @@
 /* ==========================================================
    3. LISTA DE PRODUTOS (ESTILO IFOOD)
    ========================================================== */
-.lista-produtos { padding: 20px; display: flex; flex-direction: column; gap: 15px; }
+.lista-produtos { 
+  padding: 20px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 15px; 
+}
+
+.grupo-categoria {
+  margin-bottom: 25px; /* <--- Espaço extra entre o fim das marmitas e o começo das bebidas */
+}
+
+.card-produto-compacto {
+  display: flex;
+  flex-direction: row-reverse; /* Imagem na esquerda */
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Sombra leve para "flutuar" no fundo cinza */
+  margin-bottom: 10px; /* Reforço do espaço */
+}
 
 .card-produto-compacto {
   display: flex; justify-content: space-between;
@@ -166,4 +187,38 @@
   z-index: 999;
   box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
   padding: 10px;
+}
+
+/* Estilo para os títulos das divisões */
+.titulo-categoria-lista {
+  background-color: #f8f8f8;
+  padding: 10px 15px;
+  margin: 20px -20px 15px -20px; /* Estica até as bordas */
+  font-size: 1.2rem;
+  color: #634432; /* Marrom terroso */
+  border-left: 5px solid #d66458; /* Cor destaque da Déia */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.grupo-categoria {
+  margin-bottom: 30px;
+}
+
+/*3 Ajuste no card para alinhar texto e botões */
+.acoes-marmita, .acoes-bebida {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.btn-add-simples {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
 }
