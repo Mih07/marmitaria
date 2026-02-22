@@ -20,6 +20,5 @@ Este é um sistema de cardápio interativo desenvolvido para facilitar os pedido
 ## 📦 Como rodar o projeto
 Para rodar este projeto localmente, siga os passos abaixo:
 
-1. Clone o repositório:
-   ```bash
-   git clone [https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git](https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git)
+1. Acesse
+   https://marmitaria-two.vercel.app/
