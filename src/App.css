@@ -192,13 +192,17 @@
 /* Estilo para os títulos das divisões */
 .titulo-categoria-lista {
   background-color: #f8f8f8;
-  padding: 10px 15px;
-  margin: 20px -20px 15px -20px; /* Estica até as bordas */
-  font-size: 1.2rem;
-  color: #634432; /* Marrom terroso */
-  border-left: 5px solid #d66458; /* Cor destaque da Déia */
+  padding: 15px; /* Aumentei um pouco o preenchimento */
+  margin: 25px -20px 15px -20px;
+  color: #634432;
+  border-left: 5px solid #d66458;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  
+  /* Garante que o conteúdo flua para baixo e não para os lados */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  gap: 8px; /* <--- Isso cria o espaço automático entre o nome e o dia */
 }
 
 .grupo-categoria {
@@ -221,4 +225,112 @@
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
+}
+
+/* Estilo para itens que não são de hoje */
+.item-outro-dia {
+  opacity: 0.75;
+  background-color: #f9f9f9;
+  border: 1px dashed #ccc;
+}
+
+.header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tag-dia {
+  font-size: 0.65rem;
+  background: #634432;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.aviso-indisponivel {
+  font-size: 0.75rem;
+  color: #d66458;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Espaço entre a foto e o texto */
+.card-produto-compacto {
+  display: flex;
+  flex-direction: row; /* Foto na esquerda, texto na direita */
+  gap: 15px;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.area-foto img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.btn-ver-semana {
+  background: none;
+  border: 1px solid #d66458;
+  color: #d66458;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.8rem;
+  width: fit-content;
+}
+
+.cardapio-semanal-expansivel {
+  background: #fffdfb;
+  border: 1px solid #f1e0d6;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.cardapio-semanal-expansivel h4 {
+  color: #634432;
+  border-bottom: 2px solid #d66458;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.dia-semana-item {
+  margin-bottom: 12px;
+}
+
+.dia-semana-item h5 {
+  color: #d66458;
+  margin-bottom: 3px;
+}
+
+.dia-semana-item ul {
+  list-style: none;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.dados-cliente {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.dados-cliente input, .dados-cliente select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
 }
