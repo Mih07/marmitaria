@@ -15,30 +15,39 @@ function App() {
   const restaurante = { nome: "Marmitaria da Déia", cor: "#d66458", fone: "5511987593594" };
   
   const produtos = [
-    //SEGUND-FEIRA
+    //SEGUNDA-FEIRA
     { id: 101, dia:"Segunda-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, linguiça refogada com batatas. ", imagem: "/opcao1.png" },
     { id: 102, dia:"Segunda-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e filé de frango gralhado.", imagem: "/opcao2.png" },
     { id: 103, dia:"Segunda-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e feijoada completa.", imagem: "/opcao3.png" }, 
     
     //TERÇA-FEIRA
-    { id: 104, dia:"Terça-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, linguiça refogada com batatas. ", imagem: "/opcao1.png" },
-    { id: 105, dia:"Terça-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e filé de frango gralhado.", imagem: "/opcao2.png" },
-    { id: 106, dia:"Terça-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e feijoada completa.", imagem: "/opcao3.png" }, 
+    { id: 104, dia:"Terça-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Escondidinho de carne moída. ", imagem: "/escondidinho-carne.png" },
+    { id: 105, dia:"Terça-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Panqueca de frango.", imagem: "/panqueca-frango.png" },
+    { id: 106, dia:"Terça-feira", nome: "Opção 3", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e Contra filé acebolado.", imagem: "/contra-file-acebolado.png" }, 
     
     //QUARTA-FEIRA
-    { id: 107, dia:"Quarta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, costela ao molho cremoso. ", imagem: "/costela-molho.png" },
-    { id: 108, dia:"Quarta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e isca de tilápia empanada.", imagem: "/isca-tilapia.png" },
-    { id: 109, dia:"Quarta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e filé acebolado.", imagem: "/file-acebolado.png" }, 
+    { id: 107, dia:"Quarta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Feijoada Completa. ", imagem: "/opcao3.png" },
+    { id: 108, dia:"Quarta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Strogonoff de frango.", imagem: "/strogonoff-frango.png" },
+    { id: 109, dia:"Quarta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Contra filé com ovo.", imagem: "/contra-file-ovo.png" }, 
     
     //QUINTA-FEIRA
-    { id: 110, dia:"Quinta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, costela ao molho cremoso. ", imagem: "/costela-molho.png" },
-    { id: 111, dia:"Quinta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria:"Marmitas", destaque:false , desc:"Arroz feijão e isca de tilápia empanada.", imagem:"/isca-tilapia.png"},
-    { id: 112, dia:"Quinta-feira", nome: "Opção 3", precos: {P:22.00, M:25.50, G:38.00}, categoria:"Marmitas", destaque:false , desc:"Arroz feijão e filé acebolado.", imagem:"/file-acebolado.png"},
+    { id: 110, dia:"Quinta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Coxa sobrecoxa assada. ", imagem: "/coxa-sobrecoxa-assada.png" },
+    { id: 111, dia:"Quinta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria:"Marmitas", destaque: true , desc:"Arroz feijão e Panqueca de carne.", imagem:"/panqueca-carne.png"},
+    { id: 112, dia:"Quinta-feira", nome: "Opção 3", precos: {P:22.00, M:25.50, G:38.00}, categoria:"Marmitas", destaque:false , desc:"Arroz feijão e Linguiça acebolada.", imagem:"/linguica-acebolada.png"},
     
     //SEXTA-FEIRA
-    { id: 113, dia:"Sexta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, costela ao molho cremoso. ", imagem: "/costela-molho.png" },
-    { id: 114, dia:"Sexta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e isca de tilápia empanada.", imagem: "/isca-tilapia.png" },
-    { id: 115, dia:"Sexta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e filé acebolado.", imagem: "/file-acebolado.png" }, 
+    { id: 113, dia:"Sexta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Lasanha de frango. ", imagem: "/lasanha-frango.png" },
+    { id: 114, dia:"Sexta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e Costela com batatas.", imagem: "/costela-batata.png" },
+    { id: 115, dia:"Sexta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Crepioca ou omelete com queijo.", imagem: "/crepioca/omelete.png" }, 
+
+    //SÁBADO
+    { id: 116, dia:"Sábado", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Feijoada Completa. ", imagem: "/opcao3.png" },
+    { id: 117, dia:"Sábado", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Frango a milanesa com purê de queijo.", imagem: "/filemilanesa-pureq.png" },
+    
+    //DOMINGO
+    { id: 118, dia:"Domingo", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Lasanha bolonhesa. ", imagem: "/lasanha-bolonhesa.png" },
+    { id: 119, dia:"Domingo", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Carne assada.", imagem: "/carne-assada.png" },
+    { id: 120, dia:"Domingo", nome: "Opção 3", precos: {P:22.00, M:25.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Frango parmegiana.", imagem: "/frango-parmegiana.png" }, 
 
     { id: 4, nome: "Coca-Cola", precoFixo: 6.00, categoria: "Bebidas", destaque: true, desc: "Lata 350ml gelada.", imagem: "/coca-cola.png" },
     { id: 5, nome: "Guaraná", precoFixo: 6.00, categoria: "Bebidas", destaque: false, desc: "Lata 350ml gelada.", imagem: "/guarana.png" },
@@ -51,7 +60,6 @@ function App() {
   ];
 
   // --- FUNÇÕES ---
-
   const adicionarAoCarrinho = (produto, tamanho = null) => {
     let novoItem;
     if (tamanho) {
@@ -75,37 +83,23 @@ function App() {
       alert("Por favor, preencha nome e endereço!");
       return;
     }
-    
     const itensPedido = carrinho.map(item => `- ${item.nome}: R$ ${item.preco.toFixed(2)}`).join('\n');
-    
-    const mensagem = encodeURIComponent(
-`*NOVO PEDIDO* 📋
-------------------------------
-*Cliente:* ${cliente.nome}
-*Endereço:* ${cliente.endereco}
-*Pagamento:* ${cliente.pagamento}
-------------------------------
-*Itens:*
-${itensPedido}
-
-*Total: R$ ${total.toFixed(2)}*`
-    );
-
+    const mensagem = encodeURIComponent(`*NOVO PEDIDO* 📋\n------------------------------\n*Cliente:* ${cliente.nome}\n*Endereço:* ${cliente.endereco}\n*Pagamento:* ${cliente.pagamento}\n------------------------------\n*Itens:*\n${itensPedido}\n\n*Total: R$ ${total.toFixed(2)}*`);
     window.open(`https://wa.me/${restaurante.fone}?text=${mensagem}`, '_blank');
   };
 
   // --- LÓGICA DO CARDÁPIO DO DIA ---
   const diasSemana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
-  const hoje = diasSemana[new Date().getDay()];
+  const hojeGlobal = diasSemana[new Date().getDay()];
 
   const acompanhamentosDaSemana = {
     "Segunda-feira": "Virado de couve e ovo frito.",
-    "Terça-feira": "refogado de legumes e farofa.",
-    "Quarta-feira": "couve e laranja.",
-    "Quinta-feira": " macarrão e batata rústica.",
-    "Sexta-feira": "Legumes refogado e purê de batata.",
-    "Sábado": "Não abrimos hoje.",
-    "Domingo": "Não abrimos hoje."
+    "Terça-feira": "legumes misto e farofa.",
+    "Quarta-feira": "farofa, macarrão e legumes.",
+    "Quinta-feira": " farofa, macarrão e legumes.",
+    "Sexta-feira": "batata frita.",
+    "Sábado": "batata frita.",
+    "Domingo": "batata frita."
   };
 
   return (
@@ -132,7 +126,7 @@ ${itensPedido}
           <h2>🔥 Destaques do Dia</h2>
           <div className="scroll-horizontal">
             {produtos
-              .filter(p => p.destaque && (!p.dia || p.dia === hoje))
+              .filter(p => p.destaque && (!p.dia || p.dia === hojeGlobal))
               .map(item => (
                 <div key={item.id} className="card-destaque">
                   <img src={item.imagem} alt={item.nome} />
@@ -158,11 +152,7 @@ ${itensPedido}
 
         <nav className="filtros">
           {['Todos', 'Marmitas', 'Bebidas', 'Cervejas'].map(cat => (
-            <button 
-              key={cat}
-              className={categoriaAtiva === cat ? 'active' : ''} 
-              onClick={() => setCategoriaAtiva(cat)}
-            >
+            <button key={cat} className={categoriaAtiva === cat ? 'active' : ''} onClick={() => setCategoriaAtiva(cat)}>
               {cat}
             </button>
           ))}
@@ -174,13 +164,12 @@ ${itensPedido}
             .map(categoria => {
               const produtosExibidos = produtos.filter(p => {
                 if (p.categoria === "Marmitas") {
-                  const diaSimulado = (hoje === "Domingo" || hoje === "Sábado") ? "Segunda-feira" : hoje;
-                  return p.categoria === categoria && p.dia === diaSimulado;
+                  return (categoria === "Marmitas") && p.dia === hojeGlobal;
                 }
                 return p.categoria === categoria;
               });
 
-              if (produtosExibidos.length === 0) return null;
+              if (produtosExibidos.length === 0 && categoria !== "Marmitas") return null;
 
               return (
                 <div key={categoria} className="grupo-categoria">
@@ -188,9 +177,9 @@ ${itensPedido}
                     {categoria}
                     {categoria === "Marmitas" && (
                       <div className="container-acompanhamentos">
-                        <span className="hoje-badge">Cardápio de Hoje ({hoje})</span>
+                        <span className="hoje-badge">Cardápio de Hoje ({hojeGlobal})</span>
                         <span className="acompanhamentos-dia">
-                          * Acompanha: {acompanhamentosDaSemana[hoje]}
+                          * Acompanha: {acompanhamentosDaSemana[hojeGlobal]}
                         </span>
                         <button className="btn-ver-semana" onClick={() => setVerSemana(!verSemana)}>
                           {verSemana ? "⬅️ Ver menos" : "📅 Ver Cardápio da Semana"}
@@ -221,29 +210,41 @@ ${itensPedido}
                     </div>
                   ))}
 
-                  {categoria === "Marmitas" && verSemana && (
-                    <div className="cardapio-semanal-expansivel">
-                      <h4>Programação da Semana</h4>
-                      {diasSemana.filter(d => d !== hoje && d !== "Domingo" && d !== "Sábado").map(diaSemana => (
-                        <div key={diaSemana} className="dia-semana-item">
-                          <h5>{diaSemana}</h5>
-                          <ul>
-                            {produtos.filter(p => p.dia === diaSemana).map(p => (
-                              <li key={p.id}>{p.nome}: {p.desc}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                  {/* LISTA EXPANSÍVEL DA SEMANA COM IMAGENS PARA CONFERÊNCIA */}
+{categoria === "Marmitas" && verSemana && (
+  <div className="cardapio-semanal-expansivel" style={{ marginTop: '20px', padding: '15px', backgroundColor: '#fdf2f0', borderRadius: '12px', border: '1px solid #d66458' }}>
+    <h4 style={{ color: '#d66458', marginBottom: '15px' }}>📅 Conferência do Cardápio Semanal</h4>
+    {diasSemana.map(diaSemana => (
+      <div key={diaSemana} style={{ marginBottom: '20px', borderBottom: '1px dashed #ccc', paddingBottom: '15px' }}>
+        <h5 style={{ margin: '0 0 10px 0', color: '#333', fontSize: '1.1rem' }}>
+          {diaSemana} {diaSemana === hojeGlobal ? "(HOJE ⭐)" : ""}
+        </h5>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))', gap: '10px' }}>
+          {produtos.filter(p => p.dia === diaSemana).map(p => (
+            <div key={p.id} style={{ textAlign: 'center', backgroundColor: '#fff', padding: '5px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+              <img 
+                src={p.imagem} 
+                alt={p.nome} 
+                style={{ width: '100%', height: '80px', objectFit: 'cover', borderRadius: '5px' }} 
+                onError={(e) => e.target.src = 'https://via.placeholder.com/150?text=Sem+Foto'} 
+              />
+              <p style={{ fontSize: '0.75rem', fontWeight: 'bold', margin: '5px 0' }}>{p.nome}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+)}
                 </div>
               );
             })}
         </section>
       </main>
 
+      {/* FOOTER DO CARRINHO */}
       {carrinho.length > 0 && (
-        <footer className="position-fixed">
+        <footer className="footer-carrinho">
           {carrinhoAberto && (
             <div className="revisao-pedido">
               <div className="revisao-header">
@@ -258,40 +259,23 @@ ${itensPedido}
                   </li>
                 ))}
               </ul>
-              
               <div className="dados-cliente">
                 <h4>Dados para Entrega</h4>
-                <input 
-                  type="text" 
-                  placeholder="Seu Nome" 
-                  value={cliente.nome}
-                  onChange={(e) => setCliente({...cliente, nome: e.target.value})}
-                />
-                <input 
-                  type="text" 
-                  placeholder="Endereço Completo (Rua, nº, Bairro)" 
-                  value={cliente.endereco}
-                  onChange={(e) => setCliente({...cliente, endereco: e.target.value})}
-                />
-                <select 
-                  value={cliente.pagamento}
-                  onChange={(e) => setCliente({...cliente, pagamento: e.target.value})}
-                >
+                <input type="text" placeholder="Seu Nome" value={cliente.nome} onChange={(e) => setCliente({...cliente, nome: e.target.value})} />
+                <input type="text" placeholder="Endereço Completo" value={cliente.endereco} onChange={(e) => setCliente({...cliente, endereco: e.target.value})} />
+                <select value={cliente.pagamento} onChange={(e) => setCliente({...cliente, pagamento: e.target.value})}>
                   <option value="Pix">Pix</option>
-                  <option value="Cartão de Crédito">Cartão de Crédito</option>
-                  <option value="Cartão de Débito">Cartão de Débito</option>
+                  <option value="Cartão">Cartão</option>
                   <option value="Dinheiro">Dinheiro</option>
                 </select>
               </div>
             </div>
           )}
           <div className="total-info" onClick={() => setCarrinhoAberto(!carrinhoAberto)} style={{cursor: 'pointer'}}>
-            <span>{carrinhoAberto ? "⬇️ Ocultar" : "⬆️ Ver Itens"}</span>
+            <span>{carrinhoAberto ? "⬇️ Ocultar Itens" : "⬆️ Ver Itens do Pedido"}</span>
             <span>Total: <strong>R$ {total.toFixed(2)}</strong></span>
           </div>
-          <button className="btn-pedido" onClick={enviarWhatsApp}>
-            Finalizar Pedido (WhatsApp)
-          </button>
+          <button className="btn-pedido" onClick={enviarWhatsApp}>Finalizar pelo WhatsApp</button>
         </footer>
       )}
     </div>
