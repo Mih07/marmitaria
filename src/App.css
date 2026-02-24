@@ -109,6 +109,30 @@
   border: 1px solid #eee;
 }
 
+/* Container principal do carrinho que fica fixo embaixo */
+.footer-carrinho {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 74%;
+  background-color: white;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 1000; /* Garante que fique acima de tudo */
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+/* Área que mostra o total e o botão de ver itens */
+.total-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
 .btn-pedido {
   width: 100%; padding: 15px; background: #25d366;
   color: white; border: none; border-radius: 8px;
