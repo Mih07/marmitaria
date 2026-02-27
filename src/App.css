@@ -1,239 +1,171 @@
 /* ==========================================================
-   1. ESTRUTURA GLOBAL E HEADER
+   1. CONFIGURAÇÕES GLOBAIS E RESET
    ========================================================== */
-.container { 
-  font-family: sans-serif; 
-  max-width: 500px; 
-  margin: 0 auto; 
-  background: #f4f4f4; 
-  min-height: 100vh; 
-  overflow-x: hidden; 
+:root {
+  color-scheme: light; /* Força navegadores a entenderem que o site é claro */
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333333;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #f4f4f4;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ==========================================================
+   2. HEADER E STATUS
+   ========================================================== */
 .header-dinamico {
   padding: 30px 20px;
-  background: linear-gradient(rgba(223, 121, 121, 0.4), rgba(160, 12, 12, 0.4)), url('https://images.unsplash.com/photo-1514356021042-4b67690a7870?w=500');
+  background: linear-gradient(rgba(223, 121, 121, 0.4), rgba(160, 12, 12, 0.4)), 
+              url('https://images.unsplash.com/photo-1514356021042-4b67690a7870?w=500');
   background-size: cover;
   background-position: center;
   color: white;
 }
 
-.header-content { display: flex; align-items: center; gap: 20px; }
+.header-content { 
+  display: flex; 
+  align-items: center; 
+  gap: 20px; 
+}
 
 .logo-restaurante {
-  width: 70px; height: 70px;
-  border-radius: 50%; border: 3px solid white;
+  width: 70px; 
+  height: 70px;
+  border-radius: 50%; 
+  border: 3px solid white;
   object-fit: cover;
 }
 
-.status-container { display: flex; gap: 10px; margin-top: 5px; }
-
 .badge-status {
-  background: #2ecc71; color: white; padding: 4px 10px;
-  border-radius: 20px; font-size: 12px; font-weight: bold;
+  background: #2ecc71; 
+  color: white; 
+  padding: 4px 10px;
+  border-radius: 20px; 
+  font-size: 12px; 
+  font-weight: bold;
 }
 
-/* ==========================================================
-   2. DESTAQUES E FILTROS (SCROLL LATERAL)
-   ========================================================== */
-.scroll-horizontal, .filtros {
-  display: flex; gap: 15px; overflow-x: auto;
-  padding: 10px 20px; scrollbar-width: none;
-}
-.scroll-horizontal::-webkit-scrollbar { display: none; }
-
-.card-destaque {
-  min-width: 250px; height: 130px; position: relative;
-  border-radius: 15px; overflow: hidden;
-}
-
-.filtros button {
-  padding: 8px 20px; border-radius: 20px; border: 1px solid #ddd;
-  background: white; white-space: nowrap; font-weight: 600;
-}
-.filtros button.active { background: #e74c3c; color: white; border-color: #e74c3c; }
-
-/* ==========================================================
-   3. LISTA DE PRODUTOS (ESTILO IFOOD)
-   ========================================================== */
-.lista-produtos { 
-  padding: 20px; 
-  display: flex; 
-  flex-direction: column; 
-  gap: 15px; 
-}
-
-.grupo-categoria {
-  margin-bottom: 25px; /* <--- Espaço extra entre o fim das marmitas e o começo das bebidas */
-}
-
-.card-produto-compacto {
-  display: flex;
-  flex-direction: row-reverse; /* Imagem na esquerda */
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Sombra leve para "flutuar" no fundo cinza */
-  margin-bottom: 10px; /* Reforço do espaço */
-}
-
-.card-produto-compacto {
-  display: flex; justify-content: space-between;
-  padding: 15px; background: white; border-radius: 12px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.area-foto { position: relative; width: 80px; }
-.area-foto img { width: 80px; height: 80px; border-radius: 8px; object-fit: cover; }
-
-.btn-add-mini {
-  position: absolute; bottom: -5px; right: -5px;
-  background: #e74c3c; color: white; border: none;
-  width: 28px; height: 28px; border-radius: 50%; font-weight: bold;
-}
-
-/* ==========================================================
-   4. CARRINHO E REVISÃO (FIXO NO RODAPÉ)
-   ========================================================== */
-.position-fixed {
-  position: fixed; bottom: 0; width: 100%; max-width: 500px;
-  padding: 15px; background: white; border-top: 1px solid #ddd;
-  box-sizing: border-box; z-index: 999;
-}
-
-.revisao-pedido {
-  background: white; max-height: 250px; overflow-y: auto;
-  margin-bottom: 15px; padding: 10px; border-radius: 10px;
-  border: 1px solid #eee;
-}
-
-/* Container principal do carrinho que fica fixo embaixo */
-.footer-carrinho {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
-  z-index: 1000; /* Garante que fique acima de tudo */
-  padding: 10px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  box-sizing: border-box;
-}
-
-/* Área que mostra o total e o botão de ver itens */
-.total-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.1rem;
-}
-
-.btn-pedido {
-  width: 100%; padding: 15px; background: #25d366;
-  color: white; border: none; border-radius: 8px;
-  font-weight: bold; font-size: 16px; cursor: pointer;
-}
-
-/* Container do Carrinho no Header */
 .carrinho-header {
   position: relative; 
-  font-size: 35px; /* Aumentamos de 28px para 35px */
+  font-size: 35px; 
   margin-left: auto; 
   cursor: pointer;
-  padding: 10px; /* Adiciona uma área de toque maior ao redor do ícone */
+  padding: 10px;
   transition: transform 0.2s ease;
 }
 
-/* Efeito de clique no ícone */
-.carrinho-header:active {
-  transform: scale(1.2); /* Ele dá um "pulo" quando você clica */
-}
+.carrinho-header:active { transform: scale(1.2); }
 
-/* Ajuste na bolinha da quantidade para não ficar desproporcional */
 .badge-quantidade {
   position: absolute;
-  top: 5px; /* Ajustado para a nova escala */
-  right: 2px;
+  top: 5px; right: 2px;
   background-color: #e74c3c;
   color: white;
-  font-size: 13px; /* Fonte levemente maior */
+  font-size: 13px;
   font-weight: bold;
-  width: 22px; /* Bolinha um pouco maior */
-  height: 22px;
+  width: 22px; height: 22px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   border: 2px solid white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-/* Garante que a foto da feijoada e das outras não estoure o card */
-.area-foto {
-  width: 100px;
-  height: 100px;
-  overflow: hidden; /* Corta o que sobrar da imagem */
-  border-radius: 8px;
+/* ==========================================================
+   3. FILTROS E DESTAQUES (SCROLLS)
+   ========================================================== */
+.scroll-horizontal, .filtros {
+  display: flex; 
+  gap: 15px; 
+  overflow-x: auto;
+  padding: 10px 20px; 
+  scrollbar-width: none;
+}
+.scroll-horizontal::-webkit-scrollbar { display: none; }
+
+.card-destaque {
+  min-width: 250px; 
+  height: 130px; 
+  position: relative;
+  border-radius: 15px; 
+  overflow: hidden;
 }
 
-.area-foto img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ajusta a foto sem distorcer */
-}
-
-/* Para as fotos nos Destaques (as que rolam em cima) */
 .card-destaque img {
-  width: 100%;
-  height: 120px; /* Altura fixa para os destaques */
+  width: 100%; height: 100%;
   object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
 }
 
-/* Dá um espaço no final da lista para a Coca-Cola não ficar escondida */
-.container-cardapio {
-  padding-bottom: 150px; /* Espaço para o rodapé do carrinho */
+.filtros button {
+  padding: 8px 20px; 
+  border-radius: 20px; 
+  border: 1px solid #ddd;
+  background: white; 
+  white-space: nowrap; 
+  font-weight: 600;
+  color: #333;
 }
 
-/* Garante que o footer só bloqueie o que está atrás do botão, não a tela toda */
-.position-fixed {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: white;
-  z-index: 999;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-  padding: 10px;
+.filtros button.active { 
+  background: #e74c3c; 
+  color: white; 
+  border-color: #e74c3c; 
 }
 
-/* Estilo para os títulos das divisões */
+/* ==========================================================
+   4. LISTA DE PRODUTOS E CARDS
+   ========================================================== */
+.container-cardapio { padding-bottom: 150px; }
+
 .titulo-categoria-lista {
   background-color: #f8f8f8;
-  padding: 15px; /* Aumentei um pouco o preenchimento */
+  padding: 15px;
   margin: 25px -20px 15px -20px;
-  color: #634432;
+  color: #634432 !important;
   border-left: 5px solid #d66458;
   text-transform: uppercase;
-  
-  /* Garante que o conteúdo flua para baixo e não para os lados */
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
-  gap: 8px; /* <--- Isso cria o espaço automático entre o nome e o dia */
+  gap: 8px;
 }
 
-.grupo-categoria {
-  margin-bottom: 30px;
+.card-produto-compacto {
+  display: flex; 
+  gap: 75px;
+  padding: 12px;
+  margin-bottom: 35px;
+  background: white !important;
+  color: #333333 !important;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-/*3 Ajuste no card para alinhar texto e botões */
+.area-foto { 
+  width: 80px; 
+  height: 80px; 
+  flex-shrink: 0; 
+}
+
+.area-foto img { 
+  width: 100%; 
+  height: 100%; 
+  border-radius: 8px; 
+  object-fit: cover; 
+}
+
+.info-texto h3 { margin: 0; font-size: 1.1rem; color: #333; }
+.info-texto p { margin: 5px 0; font-size: 0.9rem; color: #666; }
+
 .acoes-marmita, .acoes-bebida {
   display: flex;
   justify-content: space-between;
@@ -248,57 +180,91 @@
   padding: 5px 15px;
   border-radius: 5px;
   font-weight: bold;
-  cursor: pointer;
+}
+/* Separa o preço do botão de adicionar nas Bebidas */
+.acoes-bebida {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 60px; /* Cria o espaço entre o R$ 6.00 e o botão verde */
 }
 
-/* Estilo para itens que não são de hoje */
-.item-outro-dia {
-  opacity: 0.75;
-  background-color: #f9f9f9;
-  border: 1px dashed #ccc;
+/* Separa o preço dos botões P, M, G nas Marmitas */
+.acoes-marmita {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px; /* Cria o espaço entre o R$ 22.00 e o botão P */
 }
 
-.header-card {
+/* Garante que os botões P, M, G não fiquem colados entre si */
+.seletor-tamanhos-mini {
+  display: flex;
+  gap: 8px; /* Espaço entre cada quadradinho de tamanho */
+}
+
+/* ==========================================================
+   5. CARRINHO E FORMULÁRIO (RODAPÉ)
+   ========================================================== */
+.footer-carrinho {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  width: 100%;
+  max-width: 500px; /* Alinha com o container */
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.revisao-pedido {
+  background: white; 
+  max-height: 250px; 
+  overflow-y: auto;
+  margin-bottom: 15px; 
+  padding: 10px; 
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+.dados-cliente {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.dados-cliente input, .dados-cliente select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white !important;
+  color: #333 !important;
+}
+
+.total-info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-
-.tag-dia {
-  font-size: 0.65rem;
-  background: #634432;
-  color: white;
-  padding: 2px 6px;
-  border-radius: 4px;
+  padding: 10px 0;
   font-weight: bold;
 }
 
-.aviso-indisponivel {
-  font-size: 0.75rem;
-  color: #d66458;
-  font-weight: bold;
-  font-style: italic;
-}
-
-/* Espaço entre a foto e o texto */
-.card-produto-compacto {
-  display: flex;
-  flex-direction: row; /* Foto na esquerda, texto na direita */
-  gap: 15px;
-  padding: 12px;
-  margin-bottom: 15px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.area-foto img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
+.btn-pedido {
+  width: 100%; 
+  padding: 15px; 
+  background: #25d366;
+  color: white; 
+  border: none; 
   border-radius: 8px;
+  font-weight: bold; 
+  font-size: 16px;
 }
 
+/* ==========================================================
+   6. UTILITÁRIOS E EXPANSÍVEIS
+   ========================================================== */
 .btn-ver-semana {
   background: none;
   border: 1px solid #d66458;
@@ -306,10 +272,8 @@
   padding: 8px 12px;
   border-radius: 5px;
   margin-top: 10px;
-  cursor: pointer;
   font-weight: bold;
   font-size: 0.8rem;
-  width: fit-content;
 }
 
 .cardapio-semanal-expansivel {
@@ -318,43 +282,4 @@
   padding: 15px;
   border-radius: 10px;
   margin-top: 15px;
-}
-
-.cardapio-semanal-expansivel h4 {
-  color: #634432;
-  border-bottom: 2px solid #d66458;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
-}
-
-.dia-semana-item {
-  margin-bottom: 12px;
-}
-
-.dia-semana-item h5 {
-  color: #d66458;
-  margin-bottom: 3px;
-}
-
-.dia-semana-item ul {
-  list-style: none;
-  font-size: 0.85rem;
-  color: #666;
-}
-
-.dados-cliente {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 15px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-.dados-cliente input, .dados-cliente select {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 14px;
 }
