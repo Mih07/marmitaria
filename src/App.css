@@ -2,7 +2,7 @@
    1. CONFIGURAÇÕES GLOBAIS E RESET
    ========================================================== */
 :root {
-  color-scheme: light; /* Força navegadores a entenderem que o site é claro */
+  color-scheme: light !important;
 }
 
 body {
@@ -33,94 +33,57 @@ body {
   color: white;
 }
 
-.header-content { 
-  display: flex; 
-  align-items: center; 
-  gap: 20px; 
-}
+.header-content { display: flex; align-items: center; gap: 20px; }
 
 .logo-restaurante {
-  width: 70px; 
-  height: 70px;
-  border-radius: 50%; 
-  border: 3px solid white;
+  width: 70px; height: 70px;
+  border-radius: 50%; border: 3px solid white;
   object-fit: cover;
 }
 
 .badge-status {
-  background: #2ecc71; 
-  color: white; 
-  padding: 4px 10px;
-  border-radius: 20px; 
-  font-size: 12px; 
-  font-weight: bold;
+  background: #2ecc71; color: white; padding: 4px 10px;
+  border-radius: 20px; font-size: 12px; font-weight: bold;
 }
 
 .carrinho-header {
-  position: relative; 
-  font-size: 35px; 
-  margin-left: auto; 
-  cursor: pointer;
-  padding: 10px;
-  transition: transform 0.2s ease;
+  position: relative; font-size: 35px; margin-left: auto; 
+  cursor: pointer; padding: 10px; transition: transform 0.2s ease;
 }
 
 .carrinho-header:active { transform: scale(1.2); }
 
 .badge-quantidade {
-  position: absolute;
-  top: 5px; right: 2px;
-  background-color: #e74c3c;
-  color: white;
-  font-size: 13px;
-  font-weight: bold;
-  width: 22px; height: 22px;
-  border-radius: 50%;
+  position: absolute; top: 5px; right: 2px;
+  background-color: #e74c3c; color: white;
+  font-size: 13px; font-weight: bold;
+  width: 22px; height: 22px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  border: 2px solid white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 /* ==========================================================
-   3. FILTROS E DESTAQUES (SCROLLS)
+   3. FILTROS E DESTAQUES
    ========================================================== */
 .scroll-horizontal, .filtros {
-  display: flex; 
-  gap: 15px; 
-  overflow-x: auto;
-  padding: 10px 20px; 
-  scrollbar-width: none;
+  display: flex; gap: 15px; overflow-x: auto;
+  padding: 10px 20px; scrollbar-width: none;
 }
 .scroll-horizontal::-webkit-scrollbar { display: none; }
 
 .card-destaque {
-  min-width: 250px; 
-  height: 130px; 
-  position: relative;
-  border-radius: 15px; 
-  overflow: hidden;
+  min-width: 250px; height: 130px; position: relative;
+  border-radius: 15px; overflow: hidden;
 }
 
-.card-destaque img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
+.card-destaque img { width: 100%; height: 100%; object-fit: cover; }
 
 .filtros button {
-  padding: 8px 20px; 
-  border-radius: 20px; 
-  border: 1px solid #ddd;
-  background: white; 
-  white-space: nowrap; 
-  font-weight: 600;
-  color: #333;
+  padding: 8px 20px; border-radius: 20px; border: 1px solid #ddd;
+  background: white; white-space: nowrap; font-weight: 600; color: #333;
 }
 
-.filtros button.active { 
-  background: #e74c3c; 
-  color: white; 
-  border-color: #e74c3c; 
-}
+.filtros button.active { background: #e74c3c; color: white; border-color: #e74c3c; }
 
 /* ==========================================================
    4. LISTA DE PRODUTOS E CARDS
@@ -128,7 +91,7 @@ body {
 .container-cardapio { padding-bottom: 150px; }
 
 .titulo-categoria-lista {
-  background-color: #f8f8f8;
+  background-color: #f8f8f8 !important;
   padding: 15px;
   margin: 25px -20px 15px -20px;
   color: #634432 !important;
@@ -141,164 +104,81 @@ body {
 
 .card-produto-compacto {
   display: flex; 
-  gap: 75px;
+  gap: 15px; /* Reduzi o gap de 75px para um valor real de respiro */
   padding: 12px;
   margin-bottom: 15px;
   background-color: #ffffff !important;
-  
   color: #333333 !important;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.area-foto { 
-  width: 80px; 
-  height: 80px; 
-  flex-shrink: 0; 
-}
+.area-foto { width: 80px; height: 80px; flex-shrink: 0; }
+.area-foto img { width: 100%; height: 100%; border-radius: 8px; object-fit: cover; }
 
-.area-foto img { 
-  width: 100%; 
-  height: 100%; 
-  border-radius: 8px; 
-  object-fit: cover; 
-}
+.info-texto h3 { font-size: 1.1rem; color: #333 !important; margin: 0; }
+.info-texto p { display: block; margin: 5px 0; font-size: 0.9rem; color: #666 !important; }
 
-.info-texto h3 { 
-  font-size: 1.1rem; 
-  color: #333 !important; 
-  margin: 0;}
-.info-texto p { 
-  display: block; 
-  margin: 5px 0; 
-  font-size: 0.9rem; 
-  color: #666 !important; 
-}
-
-/* 3. Forçar a cor do preço e dos botões */
+/* Preços e Ações */
 .acoes-marmita strong, .acoes-bebida strong {
   color: #333333 !important;
   font-weight: bold;
 }
-/* 5. Caso o título da categoria (MARMITAS, BEBIDAS) também suma */
-.titulo-categoria-lista {
-  color: #634432 !important;
-  background-color: #f8f8f8 !important;
-}
 
-.btn-add-simples {
-  background-color: #2ecc71;
-  color: white;
-  border: none;
-  padding: 5px 15px;
-  border-radius: 5px;
-  font-weight: bold;
-}
-/* Separa o preço do botão de adicionar nas Bebidas */
-.acoes-bebida {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 30px; /* Cria o espaço entre o R$ 6.00 e o botão verde */
-}
+.acoes-bebida { display: flex; align-items: center; gap: 30px; }
+.acoes-marmita { display: flex; align-items: center; gap: 15px; }
 
-/* Separa o preço dos botões P, M, G nas Marmitas */
-.acoes-marmita {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px; /* Cria o espaço entre o R$ 22.00 e o botão P */
-}
-
-/* Garante que os botões P, M, G não fiquem colados entre si */
-.seletor-tamanhos-mini {
-  display: flex;
-  gap: 8px; /* Espaço entre cada quadradinho de tamanho */
-}
-/* 4. Forçar os botões P, M, G a terem fundo claro e letra escura */
+.seletor-tamanhos-mini { display: flex; gap: 8px; }
 .seletor-tamanhos-mini button {
   background-color: #f0f0f0 !important;
   color: #333333 !important;
   border: 1px solid #cccccc !important;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.btn-add-simples {
+  background-color: #2ecc71; color: white; border: none;
+  padding: 5px 15px; border-radius: 5px; font-weight: bold; cursor: pointer;
 }
 
 /* ==========================================================
-   5. CARRINHO E FORMULÁRIO (RODAPÉ)
+   5. CARRINHO E FORMULÁRIO
    ========================================================== */
 .footer-carrinho {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  width: 100%;
-  max-width: 500px; /* Alinha com o container */
-  margin: 0 auto;
-  background-color: white;
-  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-  padding: 10px 20px;
-  box-sizing: border-box;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  width: 100%; max-width: 500px; margin: 0 auto;
+  background-color: white; z-index: 1000; padding: 10px 20px;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15); box-sizing: border-box;
 }
 
 .revisao-pedido {
-  background: white; 
-  max-height: 250px; 
-  overflow-y: auto;
-  margin-bottom: 15px; 
-  padding: 10px; 
-  border-radius: 10px;
-  border: 1px solid #eee;
+  background: white; max-height: 250px; overflow-y: auto;
+  margin-bottom: 15px; padding: 10px; border-radius: 10px; border: 1px solid #eee;
 }
 
-.dados-cliente {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px 0;
-}
-
+.dados-cliente { display: flex; flex-direction: column; gap: 10px; padding: 10px 0; }
 .dados-cliente input, .dados-cliente select {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background: white !important;
-  color: #333 !important;
+  padding: 10px; border: 1px solid #ddd; border-radius: 5px;
+  background: white !important; color: #333 !important;
 }
 
-.total-info {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  font-weight: bold;
-}
+.total-info { display: flex; justify-content: space-between; padding: 10px 0; font-weight: bold; }
 
 .btn-pedido {
-  width: 100%; 
-  padding: 15px; 
-  background: #25d366;
-  color: white; 
-  border: none; 
-  border-radius: 8px;
-  font-weight: bold; 
-  font-size: 16px;
+  width: 100%; padding: 15px; background: #25d366; color: white;
+  border: none; border-radius: 8px; font-weight: bold; font-size: 16px;
 }
 
 /* ==========================================================
-   6. UTILITÁRIOS E EXPANSÍVEIS
-   ========================================================== */
+   6. UTILITÁRIOS
+   ========================================================= */
 .btn-ver-semana {
-  background: none;
-  border: 1px solid #d66458;
-  color: #d66458;
-  padding: 8px 12px;
-  border-radius: 5px;
-  margin-top: 10px;
-  font-weight: bold;
-  font-size: 0.8rem;
+  background: none; border: 1px solid #d66458; color: #d66458;
+  padding: 8px 12px; border-radius: 5px; margin-top: 10px; font-weight: bold; font-size: 0.8rem;
 }
 
 .cardapio-semanal-expansivel {
-  background: #fffdfb;
-  border: 1px solid #f1e0d6;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 15px;
+  background: #fffdfb; border: 1px solid #f1e0d6;
+  padding: 15px; border-radius: 10px; margin-top: 15px;
 }
