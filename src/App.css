@@ -143,8 +143,9 @@ body {
   display: flex; 
   gap: 75px;
   padding: 12px;
-  margin-bottom: 35px;
-  background: white !important;
+  margin-bottom: 15px;
+  background-color: #ffffff !important;
+  
   color: #333333 !important;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -163,14 +164,26 @@ body {
   object-fit: cover; 
 }
 
-.info-texto h3 { margin: 0; font-size: 1.1rem; color: #333; }
-.info-texto p { margin: 5px 0; font-size: 0.9rem; color: #666; }
+.info-texto h3 { 
+  font-size: 1.1rem; 
+  color: #333 !important; 
+  margin: 0;}
+.info-texto p { 
+  display: block; 
+  margin: 5px 0; 
+  font-size: 0.9rem; 
+  color: #666 !important; 
+}
 
-.acoes-marmita, .acoes-bebida {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
+/* 3. Forçar a cor do preço e dos botões */
+.acoes-marmita strong, .acoes-bebida strong {
+  color: #333333 !important;
+  font-weight: bold;
+}
+/* 5. Caso o título da categoria (MARMITAS, BEBIDAS) também suma */
+.titulo-categoria-lista {
+  color: #634432 !important;
+  background-color: #f8f8f8 !important;
 }
 
 .btn-add-simples {
@@ -186,7 +199,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 60px; /* Cria o espaço entre o R$ 6.00 e o botão verde */
+  gap: 30px; /* Cria o espaço entre o R$ 6.00 e o botão verde */
 }
 
 /* Separa o preço dos botões P, M, G nas Marmitas */
@@ -194,13 +207,19 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 15px; /* Cria o espaço entre o R$ 22.00 e o botão P */
+  gap: 10px; /* Cria o espaço entre o R$ 22.00 e o botão P */
 }
 
 /* Garante que os botões P, M, G não fiquem colados entre si */
 .seletor-tamanhos-mini {
   display: flex;
   gap: 8px; /* Espaço entre cada quadradinho de tamanho */
+}
+/* 4. Forçar os botões P, M, G a terem fundo claro e letra escura */
+.seletor-tamanhos-mini button {
+  background-color: #f0f0f0 !important;
+  color: #333333 !important;
+  border: 1px solid #cccccc !important;
 }
 
 /* ==========================================================
