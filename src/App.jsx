@@ -17,39 +17,39 @@ function App() {
   
   const produtos = [
     //SEGUNDA-FEIRA
-    { id: 101, dia:"Segunda-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, linguiça refogada com batatas. ", imagem: "/opcao1.png" },
-    { id: 102, dia:"Segunda-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e filé de frango gralhado.", imagem: "/opcao2.png" },
-    { id: 103, dia:"Segunda-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e feijoada completa.", imagem: "/opcao3.png" }, 
+    { id: 101, dia:"Segunda-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Virada a Paulista. ", imagem: "/virada-paulista.png" },
+    { id: 102, dia:"Segunda-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e filé de frango grelhado.", imagem: "/file-grelhado.png" },
+    { id: 103, dia:"Segunda-feira", nome: "Opção 3", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e bife acebolado.", imagem: "/bife-acebolado.png" }, 
     
     //TERÇA-FEIRA
-    { id: 104, dia:"Terça-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Escondidinho de carne moída. ", imagem: "/escondidinho-carne.png" },
-    { id: 105, dia:"Terça-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Panqueca de frango.", imagem: "/panqueca-frango.png" },
-    { id: 106, dia:"Terça-feira", nome: "Opção 3", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e Contra filé acebolado.", imagem: "/contra-file-acebolado.png" }, 
+    { id: 104, dia:"Terça-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Pernil ao vinagrete. ", imagem: "/pernil.png" },
+    { id: 105, dia:"Terça-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Carne de panela.", imagem: "/carne-panela.png" },
+    { id: 106, dia:"Terça-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Linguiça acebolada.", imagem: "/linguica-acebolada.png" }, 
     
     //QUARTA-FEIRA
-    { id: 107, dia:"Quarta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Feijoada Completa. ", imagem: "/opcao3.png" },
-    { id: 108, dia:"Quarta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Fricassê de Frango.", imagem: "/fricasse-frango.png" },
-    { id: 109, dia:"Quarta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Crepioca de queijo.", imagem: "/crepioca-queijo.png" }, 
+    { id: 107, dia:"Quarta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Feijoada Completa. ", imagem: "/feijoada.png" },
+    { id: 108, dia:"Quarta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Strogonoff de frango.", imagem: "/strogonoff-frango.png" },
+    { id: 109, dia:"Quarta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Crepioca de legumes com queijo.", imagem: "/crepioca-legumes.png" }, 
     
     //QUINTA-FEIRA
-    { id: 110, dia:"Quinta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Sobrecoxa assada. ", imagem: "/sobrecoxa.png" },
-    { id: 111, dia:"Quinta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria:"Marmitas", destaque: true , desc:"Arroz feijão e Panqueca de carne.", imagem:"/panqueca-carne.png"},
-    { id: 112, dia:"Quinta-feira", nome: "Opção 3", precos: {P:22.00, M:25.50, G:38.00}, categoria:"Marmitas", destaque:false , desc:"Arroz feijão e Isca de carne acebolada.", imagem:"/iscacarne-aceb.png"},
+    { id: 110, dia:"Quinta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Frango ao molho. ", imagem: "/frango-molho.png" },
+    { id: 111, dia:"Quinta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria:"Marmitas", destaque: false, desc:"Arroz feijão e Carne moída com cenoura.", imagem:"/carnemoida-cenoura.png"},
+    { id: 112, dia:"Quinta-feira", nome: "Opção 3", precos: {P:22.00, M:25.50, G:28.00}, categoria:"Marmitas", destaque: true, desc:"Arroz feijão e Batata recheada.", imagem:"/batata-recheada.png"},
     
     //SEXTA-FEIRA
-    { id: 113, dia:"Sexta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Isca de frango oriental. ", imagem: "/iscafrango-oriental.png" },
-    { id: 114, dia:"Sexta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e Costela assada.", imagem: "/costela-assada.png" },
-    { id: 115, dia:"Sexta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Linguiça Toscana", imagem: "/linguiça-toscana.png" }, 
+    { id: 113, dia:"Sexta-feira", nome: "Opção 1", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Bife de panela. ", imagem: "/bife-panela.png" },
+    { id: 114, dia:"Sexta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e Isca de Tilápia.", imagem: "/isca-tilapia.png" },
+    { id: 115, dia:"Sexta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Filé de frango grelhado.", imagem: "/file-grelhado.png" }, 
 
     //SÁBADO
-    { id: 116, dia:"Sábado", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Feijoada Completa. ", imagem: "/opcao3.png" },
-    { id: 117, dia:"Sábado", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Frango a passarinho.", imagem: "/frango-passarinho.png" },
-    { id: 118, dia:"Sábado", nome: "Opção 3", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Parmegiana de berinjela.", imagem: "/parmegiana-beringela.png" },
+    { id: 116, dia:"Sábado", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Feijoada Completa. ", imagem: "/feijoada.png" },
+    { id: 117, dia:"Sábado", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e Dobradinha.", imagem: "/dobradinha.png" },
+    { id: 118, dia:"Sábado", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Frango a parmegiana.", imagem: "/frango-parmegiana.png" },
     
     //DOMINGO
-    { id: 119, dia:"Domingo", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Strogonoff de carne. ", imagem: "/strogonoff-carne.png" },
-    { id: 120, dia:"Domingo", nome: "Opção 2", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Contra filé na manteiga.", imagem: "/contrafile-manteiga.png" },
-    { id: 121, dia:"Domingo", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e Frango assado.", imagem: "/frango-assado.png" }, 
+    { id: 119, dia:"Domingo", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Lasanha de frango ", imagem: "/lasanha-frango.png" },
+    { id: 120, dia:"Domingo", nome: "Opção 2", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Bife a rolê.", imagem: "/bife-role.png" },
+    { id: 121, dia:"Domingo", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e Costela de forno.", imagem: "/costela-assada.png" }, 
 
     { id: 4, nome: "Coca-Cola", precoFixo: 6.00, categoria: "Bebidas", destaque: true, desc: "Lata 350ml gelada.", imagem: "/coca-cola.png" },
     { id: 5, nome: "Guaraná", precoFixo: 6.00, categoria: "Bebidas", destaque: false, desc: "Lata 350ml gelada.", imagem: "/guarana.png" },
@@ -65,12 +65,12 @@ function App() {
     { id: 302, dia:"Domingo", nome: "Salada de Maionese", precoFixo: 35.00, categoria: "Adicionais", destaque: false, desc: "kilo.", imagem: "/salada-maionese.png" },
 
     // SOBREMESAS PROGRAMADAS
-    { id: 201, dia:"Domingo", nome: "Pudim", precoFixo: 8.00, categoria: "Sobremesas", destaque: false, desc: "200 ml.", imagem: "/pudim200.png" },
-    { id: 201, dia:"Domingo", nome: "Pudim", precoFixo: 12.00, categoria: "Sobremesas", destaque: false, desc: "500 ml.", imagem: "/pudim500.png" },
-    { id: 201, dia:"Domingo", nome: "Pudim Família", precoFixo: 60.00, categoria: "Sobremesas", destaque: false, desc: "1.500 kilo.", imagem: "/pudim-familia.png" },
-    { id: 202, dia:"Domingo", nome: "Bolo de Brigadeiro", precoFixo: 14.00, categoria: "Sobremesas", destaque: false, desc: "Pote 200 ml.", imagem: "/bolobrigadeiro200.png" },
-    { id: 202, dia:"Domingo", nome: "Bolo de Ninho com Morango", precoFixo: 14.00, categoria: "Sobremesas", destaque: false, desc: "Pote 200 ml.", imagem: "/bolopotemorango.png" },
-    { id: 202, dia:"Domingo", nome: "Bolo de Brigadeiro", precoFixo: 10.00, categoria: "Sobremesas", destaque: false, desc: "Corte unidade", imagem: "/bolocorte.png" },
+    { id: 201, dia:"Domingo", nome: "Pudim 200 ml", precoFixo: 8.00, categoria: "Sobremesas", destaque: false, desc: "200 ml.", imagem: "/pudim200.png" },
+    { id: 202, dia:"Domingo", nome: "Pudim 500 ml", precoFixo: 12.00, categoria: "Sobremesas", destaque: false, desc: "500 ml.", imagem: "/pudim500.png" },
+    { id: 203, dia:"Domingo", nome: "Pudim Família", precoFixo: 60.00, categoria: "Sobremesas", destaque: false, desc: "1.500 kilo.", imagem: "/pudim-familia.png" },
+    { id: 204, dia:"Domingo", nome: "Bolo de Brigadeiro", precoFixo: 14.00, categoria: "Sobremesas", destaque: false, desc: "Pote 200 ml.", imagem: "/bolobrigadeiro200.png" },
+    { id: 205, dia:"Domingo", nome: "Bolo de Ninho com Morango", precoFixo: 14.00, categoria: "Sobremesas", destaque: false, desc: "Pote 200 ml.", imagem: "/bolopotemorango.png" },
+    { id: 206, dia:"Domingo", nome: "Bolo de Brigadeiro", precoFixo: 10.00, categoria: "Sobremesas", destaque: false, desc: "Corte unidade", imagem: "/bolocorte.png" },
   ];
 
   // --- FUNÇÕES ---
@@ -110,16 +110,16 @@ function App() {
 
   // --- LÓGICA DO CARDÁPIO DO DIA ---
   const diasSemana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
-  const hojeGlobal = diasSemana[new Date().getDay()];
+  const hojeGlobal = diasSemana[new Date().getDay()]; // <--- GRIFO: AQUI VOCÊ DEFINE O DIA ATUAL PARA TESTES (Ex: "Segunda-feira", "Terça-feira", etc)
 
   const acompanhamentosDaSemana = {
-    "Segunda-feira": "farofa, legumes misto.",
-    "Terça-feira": "farofa, legumes misto.",
-    "Quarta-feira": "farofa, legumes misto.",
-    "Quinta-feira": " farofa, legumes misto.",
-    "Sexta-feira": "Farofa / batata frita.",
-    "Sábado": "Farofa / batata frita.",
-    "Domingo": "Farofa / batata frita."
+    "Segunda-feira": "Couve, farofa e legumes refogado.",
+    "Terça-feira": "Farofa e batata temperada.",
+    "Quarta-feira": "Couve, farofa e bata palha.",
+    "Quinta-feira": " Macarrão alho e óleo, repolho colorido.",
+    "Sexta-feira": "Purê de batata e legumes misto.",
+    "Sábado": "Couve refogada, batata frita e farofa.",
+    "Domingo": "Farofa, salada de maionese e batata palha."
   };
 
   return (
@@ -132,7 +132,7 @@ function App() {
             <h1>{restaurante.nome}</h1>
             <div className="status-container">
               <span className="badge-status">● Aberto</span>
-              <span className="tempo-entrega">🕒 30-45 min</span>
+              <span className="tempo-entrega">🕒  30-45 min</span>
             </div>
           </div>
           <div className="carrinho-header" onClick={() => setCarrinhoAberto(!carrinhoAberto)}>
@@ -189,12 +189,11 @@ function App() {
 
       // 2. Criamos a lista que será exibida no corpo principal (venda)
       const produtosExibidosVenda = produtosDaCategoria.filter(p => {
-        // Se for marmita, só mostra a de hoje no corpo principal
         if (categoria === "Marmitas") {
           return p.dia === hojeGlobal;
         }
-        // Para o resto (bebidas, sobremesas, adicionais), mostra tudo
-        return true;
+        // Mostra Sobremesas, Bebidas e Adicionais sempre na lista
+        return true; 
       });
 
       if (produtosDaCategoria.length === 0) return null;
@@ -218,20 +217,43 @@ function App() {
 
           {/* Renderização dos cards de venda */}
           {produtosExibidosVenda.map((item) => {
-            const liberadoVenda = !item.dia || item.dia === hojeGlobal;
+           
+           
+           // --- AQUI ESTÁ A MUDANÇA ---
+          const diasLiberadosSobr = ["Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
+
+          const liberadoVenda = 
+            !item.dia ||                                 // Bebidas (OU)
+            item.dia === hojeGlobal ||                   // Dia oficial (OU)
+            (item.categoria === "Sobremesas" && diasLiberadosSobr.includes(hojeGlobal)); 
+          // ------------------------------------------------------------
 
             return (
               <div key={item.id} className="card-produto-compacto" style={{ opacity: liberadoVenda ? 1 : 0.8 }}>
                 <div className="area-foto"><img src={item.imagem} alt={item.nome} /></div>
+                
                 <div className="info-texto">
                   <h3>{item.nome}</h3>
                   <p>{item.desc}</p>
                   
-                  {!liberadoVenda && (
-                    <div style={{ color: '#666', fontSize: '0.75rem', fontWeight: 'bold', margin: '4px 0' }}>
-                      🕒 Disponível: {item.dia}
+                  {/* Lógica de texto inteligente: separa Sobremesa de Adicional */}
+                  {item.categoria === "Sobremesas" ? (
+                    <div style={{ color: '#d66458', fontSize: '0.75rem', fontWeight: 'bold', margin: '4px 0' }}>
+                      🕒 Disponível: Quinta a Domingo
                     </div>
+                  ) : item.categoria === "Adicionais" ? (
+                    <div style={{ color: '#666', fontSize: '0.75rem', fontWeight: 'bold', margin: '4px 0' }}>
+                      🕒 Disponível: Somente Domingo
+                    </div>
+                  ) : (
+                    // Para as Marmitas e outros itens, mostra o dia normal
+                    item.dia && item.dia !== hojeGlobal && (
+                      <div style={{ color: '#666', fontSize: '0.75rem', fontWeight: 'bold', margin: '4px 0' }}>
+                        🕒 Disponível: {item.dia}
+                      </div>
+                    )
                   )}
+
 
                   <div className={item.categoria === "Marmitas" ? "acoes-marmita" : "acoes-bebida"}>
                     <strong>R$ {item.precoFixo ? item.precoFixo.toFixed(2) : item.precos.P.toFixed(2)}</strong>
@@ -264,25 +286,65 @@ function App() {
           {/* LISTA DA SEMANA (Aparece aqui quando o botão é clicado) */}
           {categoria === "Marmitas" && verSemana && (
             <div className="cardapio-semanal-expansivel" style={{ marginTop: '20px', padding: '15px', backgroundColor: '#fdf2f0', borderRadius: '12px', border: '1px solid #d66458' }}>
-              <h4 style={{ color: '#d66458', marginBottom: '15px' }}>📅 Conferência do Cardápio Semanal - 02 a 08 de março</h4>
+              <h4 style={{ color: '#d66458', marginBottom: '15px' }}>📅 Conferência do Cardápio Semanal - 09 a 15 de março</h4>
               {diasSemana.map(diaSemana => (
                 <div key={diaSemana} style={{ marginBottom: '20px', borderBottom: '1px dashed #ccc', paddingBottom: '15px' }}>
                   <h5 style={{ margin: '0 0 10px 0', color: '#333', fontSize: '1.1rem' }}>
                     {diaSemana} {diaSemana === hojeGlobal ? "(HOJE ⭐)" : ""}
                   </h5>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))', gap: '10px' }}>
-                    {/* Aqui mostramos TUDO que tem o dia selecionado (Marmitas, Sobremesas e Adicionais) */}
-                    {produtos.filter(p => p.dia === diaSemana).map(p => (
-                      <div key={p.id} style={{ textAlign: 'center', backgroundColor: '#fff', padding: '5px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-                        <img 
-                          src={p.imagem} 
-                          alt={p.nome} 
-                          style={{ width: '100%', height: '80px', objectFit: 'cover', borderRadius: '5px' }} 
-                        />
-                        <p style={{ fontSize: '0.7rem', fontWeight: 'bold', margin: '5px 0' }}>{p.nome}</p>
-                        <span style={{ fontSize: '0.6rem', color: '#666' }}>({p.categoria})</span>
-                      </div>
-                    ))}
+                    
+
+                    {/* Aqui mostramos os itens do dia + Sobremesas de Quinta a Sábado */}
+                    {produtos.filter(p => {
+                      // 1. Mostra sempre o que é do dia oficial (Marmitas, Bebidas, etc)
+                      if (p.dia === diaSemana) return true;
+
+                      // 2. REGRA DAS SOBREMESAS (Aparecer em outros dias além de domingo)
+                      const diasExtrasSobremesa = ["Quinta-feira", "Sexta-feira", "Sábado"]; // <--- GRIFO: DIAS EXTRAS
+                      if (p.categoria === "Sobremesas" && diasExtrasSobremesa.includes(diaSemana)) {
+                        return true;
+                      }
+
+                      return false;
+                    }).map(p => {
+                      // 3. REGRA DO CADEADO (Quem pode ser vendido em qual dia)
+                      const diasLiberadosSobr = ["Quinta-feira", "Sexta-feira", "Sábado", "Domingo"]; // <--- GRIFO: LIBERAÇÃO SOBREMESA
+                      
+                      const estaTrancado = 
+                        (p.categoria === "Sobremesas" && !diasLiberadosSobr.includes(diaSemana)) ||
+                        (p.categoria === "Adicionais" && diaSemana !== "Domingo"); // <--- GRIFO: ADICIONAL SÓ DOMINGO
+
+                      return (
+                        <div key={p.id} style={{ 
+                          textAlign: 'center', 
+                          backgroundColor: '#fff', 
+                          padding: '5px', 
+                          borderRadius: '8px', 
+                          boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                          position: 'relative'
+                        }}>
+                          {estaTrancado && (
+                            <span style={{ position: 'absolute', top: '5px', right: '5px', fontSize: '0.8rem' }}>🔒</span>
+                          )}
+                          <img 
+                            src={p.imagem} 
+                            alt={p.nome} 
+                            style={{ 
+                              width: '100%', 
+                              height: '80px', 
+                              objectFit: 'cover', 
+                              borderRadius: '5px',
+                              filter: estaTrancado ? 'grayscale(100%)' : 'none',
+                              opacity: estaTrancado ? 0.6 : 1
+                            }} 
+                          />
+                          <p style={{ fontSize: '0.7rem', fontWeight: 'bold', margin: '5px 0' }}>{p.nome}</p>
+                          <span style={{ fontSize: '0.6rem', color: '#666' }}>({p.categoria})</span>
+                        </div>
+                      );
+                    })}
+
                   </div>
                 </div>
               ))}
