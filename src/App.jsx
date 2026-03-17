@@ -22,34 +22,34 @@ function App() {
     { id: 103, dia:"Segunda-feira", nome: "Opção 3", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e bife acebolado.", imagem: "/bife-acebolado.png" }, 
     
     //TERÇA-FEIRA
-    { id: 104, dia:"Terça-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Pernil ao vinagrete. ", imagem: "/pernil.png" },
-    { id: 105, dia:"Terça-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Carne de panela.", imagem: "/carne-panela.png" },
-    { id: 106, dia:"Terça-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Linguiça acebolada.", imagem: "/linguica-acebolada.png" }, 
+    { id: 104, dia:"Terça-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Costela Cozida. ", imagem: "/costela-cozida.png" },
+    { id: 105, dia:"Terça-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Isca de frango milanesa.", imagem: "/isca-frango-milanesa.png" },
+    { id: 106, dia:"Terça-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Crepioca de queijo.", imagem: "/crepioca-queijo.png" }, 
     
     //QUARTA-FEIRA
     { id: 107, dia:"Quarta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Feijoada Completa. ", imagem: "/feijoada.png" },
     { id: 108, dia:"Quarta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Strogonoff de frango.", imagem: "/strogonoff-frango.png" },
-    { id: 109, dia:"Quarta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Crepioca de legumes com queijo.", imagem: "/crepioca-legumes.png" }, 
+    { id: 109, dia:"Quarta-feira", nome: "Opção 3", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Bife acebolado", imagem: "/bife-acebolado.png" }, 
     
     //QUINTA-FEIRA
-    { id: 110, dia:"Quinta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Frango ao molho. ", imagem: "/frango-molho.png" },
-    { id: 111, dia:"Quinta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria:"Marmitas", destaque: false, desc:"Arroz feijão e Carne moída com cenoura.", imagem:"/carnemoida-cenoura.png"},
-    { id: 112, dia:"Quinta-feira", nome: "Opção 3", precos: {P:22.00, M:25.50, G:28.00}, categoria:"Marmitas", destaque: true, desc:"Arroz feijão e Batata recheada.", imagem:"/batata-recheada.png"},
+    { id: 110, dia:"Quinta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Panqueca de carne. ", imagem: "/panqueca-carne.png" },
+    { id: 111, dia:"Quinta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria:"Marmitas", destaque: false, desc:"Arroz feijão e Frango gratinado.", imagem:"/frango-gratinado.png"},
+    { id: 112, dia:"Quinta-feira", nome: "Opção 3", precos: {P:22.00, M:25.50, G:28.00}, categoria:"Marmitas", destaque: false, desc:"Arroz feijão e Linguiça acebolada.", imagem:"/linguica-acebolada.png"},
     
     //SEXTA-FEIRA
-    { id: 113, dia:"Sexta-feira", nome: "Opção 1", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Bife de panela. ", imagem: "/bife-panela.png" },
-    { id: 114, dia:"Sexta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e Isca de Tilápia.", imagem: "/isca-tilapia.png" },
-    { id: 115, dia:"Sexta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Filé de frango grelhado.", imagem: "/file-grelhado.png" }, 
+    { id: 113, dia:"Sexta-feira", nome: "Opção 1", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Costela suína. ", imagem: "/costela-suína.png" },
+    { id: 114, dia:"Sexta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Isca de Tilápia.", imagem: "/isca-tilapia.png" },
+    { id: 115, dia:"Sexta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Crepioca de abobrinha.", imagem: "/crepioca-abrobrinha.png" }, 
 
     //SÁBADO
-    { id: 116, dia:"Sábado", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Feijoada Completa. ", imagem: "/feijoada.png" },
-    { id: 117, dia:"Sábado", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e Dobradinha.", imagem: "/dobradinha.png" },
-    { id: 118, dia:"Sábado", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Frango a parmegiana.", imagem: "/frango-parmegiana.png" },
+    { id: 116, dia:"Sábado", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Feijoada Completa. ", imagem: "/feijoada.png" },
+    { id: 117, dia:"Sábado", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Espetinho de Frango.", imagem: "/espetinho-frango.png" },
+    { id: 118, dia:"Sábado", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Isca de bife na manteiga.", imagem: "/isca-carne.png" },
     
     //DOMINGO
-    { id: 119, dia:"Domingo", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Lasanha de frango ", imagem: "/lasanha-frango.png" },
-    { id: 120, dia:"Domingo", nome: "Opção 2", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Bife a rolê.", imagem: "/bife-role.png" },
-    { id: 121, dia:"Domingo", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e Costela de forno.", imagem: "/costela-assada.png" }, 
+    { id: 119, dia:"Domingo", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Sobrecoxa recheada ", imagem: "/sobrecoxa-recheada.png" },
+    { id: 120, dia:"Domingo", nome: "Opção 2", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Carne assada.", imagem: "/carne-assada.png" },
+    { id: 121, dia:"Domingo", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e Parmegiana de berinjela.", imagem: "/parmegiana-beringela.png" }, 
 
     { id: 4, nome: "Coca-Cola", precoFixo: 6.00, categoria: "Bebidas", destaque: true, desc: "Lata 350ml gelada.", imagem: "/coca-cola.png" },
     { id: 5, nome: "Guaraná", precoFixo: 6.00, categoria: "Bebidas", destaque: false, desc: "Lata 350ml gelada.", imagem: "/guarana.png" },
@@ -59,6 +59,9 @@ function App() {
     { id: 9, nome: "Coca-Cola 2L ", precoFixo: 14.00, categoria: "Bebidas", destaque: false, desc: "Garrafa 2 litros.", imagem: "/coca-cola2.png" },
     { id: 10, nome: "Guaraná 2L ", precoFixo: 12.00, categoria: "Bebidas", destaque: false, desc: "Garrafa 2 litros.", imagem: "/guarana2.png" },
     { id: 11, nome: "Skol ", precoFixo: 5.00, categoria: "Cervejas", destaque: false, desc: "Lata 350 ml gelada.", imagem: "/skol.png" },
+    { id: 12, nome: "Império Puro Malte ", precoFixo: 5.00, categoria: "Cervejas", destaque: false, desc: "Lata 350 ml gelada.", imagem: "/imperio350ml.png" },
+    { id: 13, nome: "Império Puro Malte ", precoFixo: 6.00, categoria: "Cervejas", destaque: false, desc: "Lata 473 ml gelada.", imagem: "/imperio473ml.png" },
+    { id: 14, nome: "Itaipava ", precoFixo: 5.00, categoria: "Cervejas", destaque: false, desc: "Lata 350 ml gelada.", imagem: "/itaipava350ml.png" },
 
     // ADICIONAIS PROGRAMADOS
     { id: 301, dia:"Domingo", nome: "Feijão Tropeiro", precoFixo: 40.00, categoria: "Adicionais", destaque: false, desc: "kilo.", imagem: "/feijao-tropeiro.png" },
@@ -114,12 +117,12 @@ function App() {
 
   const acompanhamentosDaSemana = {
     "Segunda-feira": "Couve, farofa e legumes refogado.",
-    "Terça-feira": "Farofa e batata temperada.",
-    "Quarta-feira": "Couve, farofa e bata palha.",
-    "Quinta-feira": " Macarrão alho e óleo, repolho colorido.",
-    "Sexta-feira": "Purê de batata e legumes misto.",
-    "Sábado": "Couve refogada, batata frita e farofa.",
-    "Domingo": "Farofa, salada de maionese e batata palha."
+    "Terça-feira": "Mandioca frita / abóbora refogada.",
+    "Quarta-feira": "Couve / farofa / batata palha.",
+    "Quinta-feira": " Macarrão / batatas fritas.",
+    "Sexta-feira": "",
+    "Sábado": "",
+    "Domingo": "Feijão tropeiro/ maionese / marcarão ao molho."
   };
 
   return (
@@ -286,7 +289,7 @@ function App() {
           {/* LISTA DA SEMANA (Aparece aqui quando o botão é clicado) */}
           {categoria === "Marmitas" && verSemana && (
             <div className="cardapio-semanal-expansivel" style={{ marginTop: '20px', padding: '15px', backgroundColor: '#fdf2f0', borderRadius: '12px', border: '1px solid #d66458' }}>
-              <h4 style={{ color: '#d66458', marginBottom: '15px' }}>📅 Conferência do Cardápio Semanal - 09 a 15 de março</h4>
+              <h4 style={{ color: '#d66458', marginBottom: '15px' }}>📅 Conferência do Cardápio Semanal - 16 a 22 de março</h4>
               {diasSemana.map(diaSemana => (
                 <div key={diaSemana} style={{ marginBottom: '20px', borderBottom: '1px dashed #ccc', paddingBottom: '15px' }}>
                   <h5 style={{ margin: '0 0 10px 0', color: '#333', fontSize: '1.1rem' }}>
