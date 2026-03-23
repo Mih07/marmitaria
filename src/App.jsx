@@ -32,9 +32,9 @@ function App() {
     { id: 109, dia:"Quarta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Macarrão da Casa", imagem: "/macarrao-casa.png" }, 
     
     //QUINTA-FEIRA
-    { id: 110, dia:"Quinta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Coxa Sobrecoxa assada. ", imagem: "/coxa-sobrecoxa-assada.png" },
-    { id: 111, dia:"Quinta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria:"Marmitas", destaque: true, desc:"Arroz feijão e Virado de repolho.", imagem:"/virado-repolho.png"},
-    { id: 112, dia:"Quinta-feira", nome: "Opção 3", precos: {P:24.00, M:28.00, G:30.00}, categoria:"Marmitas", destaque: false, desc:"Arroz feijão e Bife acebolado.", imagem:"/bife-acebolado.png"},
+    { id: 110, dia:"Quinta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Coxa Sobrecoxa assada - Acompanhado com virado de repolho. ", imagem: "/coxa-sobrecoxa-assada.png" },
+    { id: 111, dia:"Quinta-feira", nome: "Opção 2", precos: {P:24.00, M:28.00, G:30.00}, categoria:"Marmitas", destaque: false, desc:"Arroz feijão e Bife acebolado.", imagem:"/bife-acebolado.png"},
+    //{ id: 112, dia:"Quinta-feira", nome: "Opção 3", precos: {P:24.00, M:28.00, G:30.00}, categoria:"Marmitas", destaque: false, desc:"Arroz feijão e Bife acebolado.", imagem:"/bife-acebolado.png"},
     
     //SEXTA-FEIRA
     { id: 113, dia:"Sexta-feira", nome: "Opção 1", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Rabada com polenta. ", imagem: "/rabada-polenta.png" },
