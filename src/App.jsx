@@ -12,6 +12,18 @@ function App() {
   
   const total = carrinho.reduce((soma, item) => soma + item.preco, 0);
 
+    // Exemplo:datas que estarão fechado 'AAAA-MM-DD'
+  const datasFechado = [
+    '2026-04-03', // Sexta-feira Santa (exemplo)
+    '2026-04-04', //sábado
+    '2026-04-05', //domingo
+    '2026-04-21', // Tiradentes
+  ];
+
+  // --- LÓGICA DE DATA PARA BLOQUEIO ---
+  const dataHojeISO = new Date().toISOString().split('T')[0];
+  const estaFechadoHoje = datasFechado.includes(dataHojeISO);
+
   // --- DADOS ---
   const restaurante = { nome: "Marmitaria da Déia", cor: "#d66458", fone: "5511987593594" };
   
@@ -78,6 +90,9 @@ function App() {
 
   // --- FUNÇÕES ---
   const adicionarAoCarrinho = (produto, tamanho = null) => {
+    // BLOQUEIO ADICIONAL: Impede adicionar ao carrinho via código se estiver fechado
+    if (estaFechadoHoje) return;
+
     let novoItem;
     if (tamanho) {
       novoItem = {
@@ -96,7 +111,6 @@ function App() {
   };
 
   const removerDoCarrinho = (idUnico) => {
-    // Cria um novo carrinho filtrando (tirando) apenas o item que tem o ID clicado
     const novoCarrinho = carrinho.filter(item => item.id_unico !== idUnico);
     setCarrinho(novoCarrinho);
   };
@@ -113,7 +127,7 @@ function App() {
 
   // --- LÓGICA DO CARDÁPIO DO DIA ---
   const diasSemana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
-  const hojeGlobal = diasSemana[new Date().getDay()]; // <--- GRIFO: AQUI VOCÊ DEFINE O DIA ATUAL PARA TESTES (Ex: "Segunda-feira", "Terça-feira", etc)
+  const hojeGlobal = diasSemana[new Date().getDay()]; 
 
   const acompanhamentosDaSemana = {
     "Segunda-feira": "Quiabo refogado / farofa / abobrinha.",
@@ -122,7 +136,7 @@ function App() {
     "Quinta-feira": " Legumes refogado / macarrão / farofa de banana",
     "Sexta-feira": "",
     //"Sábado": "",
-    //"Domingo": ""
+    //"Domingo": "",
   };
 
   return (
@@ -134,8 +148,11 @@ function App() {
           <div className="header-info">
             <h1>{restaurante.nome}</h1>
             <div className="status-container">
-              <span className="badge-status">● Aberto</span>
-              <span className="tempo-entrega">🕒  30-45 min</span>
+              {/* MUDANÇA: Status muda de cor e texto se estiver fechado */}
+              <span className="badge-status" style={{ backgroundColor: estaFechadoHoje ? '#777' : '#28a745' }}>
+                ● {estaFechadoHoje ? 'Fechado' : 'Aberto'}
+              </span>
+              <span className="tempo-entrega">🕒 {estaFechadoHoje ? 'Feriado' : '30-45 min'}</span>
             </div>
           </div>
           <div className="carrinho-header" onClick={() => setCarrinhoAberto(!carrinhoAberto)}>
@@ -146,6 +163,17 @@ function App() {
       </header>
 
       <main className="container-cardapio">
+        
+        {/* AVISO DE FECHAMENTO (Opcional: aparece apenas se hoje estiver na lista) */}
+        {estaFechadoHoje && (
+          <div className="aviso-fechado" style={{
+            background: '#fff3cd', color: '#856404', padding: '10px', 
+            borderRadius: '8px', textAlign: 'center', marginBottom: '15px', border: '1px solid #ffeeba'
+          }}>
+            📍 Devido ao feriado, não estamos recebendo pedidos hoje.
+          </div>
+        )}
+
         <section className="secao-destaque">
           <h2>🔥 Destaques do Dia</h2>
           <div className="scroll-horizontal">
@@ -160,12 +188,12 @@ function App() {
                     <div className="botoes-destaque">
                       {item.categoria === "Marmitas" ? (
                         <>
-                          <button onClick={() => adicionarAoCarrinho(item, 'P')}>P</button>
-                          <button onClick={() => adicionarAoCarrinho(item, 'M')}>M</button>
-                          <button onClick={() => adicionarAoCarrinho(item, 'G')}>G</button>
+                          <button disabled={estaFechadoHoje} onClick={() => adicionarAoCarrinho(item, 'P')}>P</button>
+                          <button disabled={estaFechadoHoje} onClick={() => adicionarAoCarrinho(item, 'M')}>M</button>
+                          <button disabled={estaFechadoHoje} onClick={() => adicionarAoCarrinho(item, 'G')}>G</button>
                         </>
                       ) : (
-                        <button className='btn-add-simples' onClick={() => adicionarAoCarrinho(item)}>+</button>
+                        <button disabled={estaFechadoHoje} className='btn-add-simples' onClick={() => adicionarAoCarrinho(item)}>+</button>
                       )}
                     </div>
                   </div>
@@ -186,16 +214,9 @@ function App() {
   {['Marmitas', 'Adicionais', 'Sobremesas', 'Bebidas', 'Cervejas']
     .filter(cat => categoriaAtiva === 'Todos' || categoriaAtiva === cat)
     .map(categoria => {
-      
-      // 1. Filtramos os produtos que pertencem EXATAMENTE a esta categoria
       const produtosDaCategoria = produtos.filter(p => p.categoria === categoria);
-
-      // 2. Criamos a lista que será exibida no corpo principal (venda)
       const produtosExibidosVenda = produtosDaCategoria.filter(p => {
-        if (categoria === "Marmitas") {
-          return p.dia === hojeGlobal;
-        }
-        // Mostra Sobremesas, Bebidas e Adicionais sempre na lista
+        if (categoria === "Marmitas") return p.dia === hojeGlobal;
         return true; 
       });
 
@@ -218,18 +239,16 @@ function App() {
             )}
           </h2>
 
-          {/* Renderização dos cards de venda */}
           {produtosExibidosVenda.map((item) => {
-           
-           
-           // --- AQUI ESTÁ A MUDANÇA ---
           const diasLiberadosSobr = ["Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
 
+          // MUDANÇA: Agora o liberadoVenda também checa se o restaurante NÃO está fechado hoje
           const liberadoVenda = 
-            !item.dia ||                                 // Bebidas (OU)
-            item.dia === hojeGlobal ||                   // Dia oficial (OU)
-            (item.categoria === "Sobremesas" && diasLiberadosSobr.includes(hojeGlobal)); 
-          // ------------------------------------------------------------
+            !estaFechadoHoje && (
+              !item.dia || 
+              item.dia === hojeGlobal || 
+              (item.categoria === "Sobremesas" && diasLiberadosSobr.includes(hojeGlobal))
+            );
 
             return (
               <div key={item.id} className="card-produto-compacto" style={{ opacity: liberadoVenda ? 1 : 0.8 }}>
@@ -239,7 +258,6 @@ function App() {
                   <h3>{item.nome}</h3>
                   <p>{item.desc}</p>
                   
-                  {/* Lógica de texto inteligente: separa Sobremesa de Adicional */}
                   {item.categoria === "Sobremesas" ? (
                     <div style={{ color: '#d66458', fontSize: '0.75rem', fontWeight: 'bold', margin: '4px 0' }}>
                       🕒 Disponível: Quinta a Domingo
@@ -249,7 +267,6 @@ function App() {
                       🕒 Disponível: Somente Domingo
                     </div>
                   ) : (
-                    // Para as Marmitas e outros itens, mostra o dia normal
                     item.dia && item.dia !== hojeGlobal && (
                       <div style={{ color: '#666', fontSize: '0.75rem', fontWeight: 'bold', margin: '4px 0' }}>
                         🕒 Disponível: {item.dia}
@@ -257,15 +274,14 @@ function App() {
                     )
                   )}
 
-
                   <div className={item.categoria === "Marmitas" ? "acoes-marmita" : "acoes-bebida"}>
                     <strong>R$ {item.precoFixo ? item.precoFixo.toFixed(2) : item.precos.P.toFixed(2)}</strong>
                     
                     {item.categoria === "Marmitas" ? (
                       <div className="seletor-tamanhos-mini">
-                        <button onClick={() => adicionarAoCarrinho(item, 'P')}>P</button>
-                        <button onClick={() => adicionarAoCarrinho(item, 'M')}>M</button>
-                        <button onClick={() => adicionarAoCarrinho(item, 'G')}>G</button>
+                        <button disabled={!liberadoVenda} onClick={() => adicionarAoCarrinho(item, 'P')}>P</button>
+                        <button disabled={!liberadoVenda} onClick={() => adicionarAoCarrinho(item, 'M')}>M</button>
+                        <button disabled={!liberadoVenda} onClick={() => adicionarAoCarrinho(item, 'G')}>G</button>
                       </div>
                     ) : (
                       <button 
@@ -286,7 +302,6 @@ function App() {
             );
           })}
 
-          {/* LISTA DA SEMANA (Aparece aqui quando o botão é clicado) */}
           {categoria === "Marmitas" && verSemana && (
             <div className="cardapio-semanal-expansivel" style={{ marginTop: '20px', padding: '15px', backgroundColor: '#fdf2f0', borderRadius: '12px', border: '1px solid #d66458' }}>
               <h4 style={{ color: '#d66458', marginBottom: '15px' }}>📅 Conferência do Cardápio Semanal - 30 de março a 02 de abril</h4>
@@ -296,58 +311,26 @@ function App() {
                     {diaSemana} {diaSemana === hojeGlobal ? "(HOJE ⭐)" : ""}
                   </h5>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))', gap: '10px' }}>
-                    
-
-                    {/* Aqui mostramos os itens do dia + Sobremesas de Quinta a Sábado */}
                     {produtos.filter(p => {
-                      // 1. Mostra sempre o que é do dia oficial (Marmitas, Bebidas, etc)
                       if (p.dia === diaSemana) return true;
-
-                      // 2. REGRA DAS SOBREMESAS (Aparecer em outros dias além de domingo)
-                      const diasExtrasSobremesa = ["Quinta-feira", "Sexta-feira", "Sábado"]; // <--- GRIFO: DIAS EXTRAS
-                      if (p.categoria === "Sobremesas" && diasExtrasSobremesa.includes(diaSemana)) {
-                        return true;
-                      }
-
+                      const diasExtrasSobremesa = ["Quinta-feira", "Sexta-feira", "Sábado"]; 
+                      if (p.categoria === "Sobremesas" && diasExtrasSobremesa.includes(diaSemana)) return true;
                       return false;
                     }).map(p => {
-                      // 3. REGRA DO CADEADO (Quem pode ser vendido em qual dia)
-                      const diasLiberadosSobr = ["Quinta-feira", "Sexta-feira", "Sábado", "Domingo"]; // <--- GRIFO: LIBERAÇÃO SOBREMESA
-                      
+                      const diasLiberadosSobr = ["Quinta-feira", "Sexta-feira", "Sábado", "Domingo"]; 
                       const estaTrancado = 
                         (p.categoria === "Sobremesas" && !diasLiberadosSobr.includes(diaSemana)) ||
-                        (p.categoria === "Adicionais" && diaSemana !== "Domingo"); // <--- GRIFO: ADICIONAL SÓ DOMINGO
+                        (p.categoria === "Adicionais" && diaSemana !== "Domingo");
 
                       return (
-                        <div key={p.id} style={{ 
-                          textAlign: 'center', 
-                          backgroundColor: '#fff', 
-                          padding: '5px', 
-                          borderRadius: '8px', 
-                          boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                          position: 'relative'
-                        }}>
-                          {estaTrancado && (
-                            <span style={{ position: 'absolute', top: '5px', right: '5px', fontSize: '0.8rem' }}>🔒</span>
-                          )}
-                          <img 
-                            src={p.imagem} 
-                            alt={p.nome} 
-                            style={{ 
-                              width: '100%', 
-                              height: '80px', 
-                              objectFit: 'cover', 
-                              borderRadius: '5px',
-                              filter: estaTrancado ? 'grayscale(100%)' : 'none',
-                              opacity: estaTrancado ? 0.6 : 1
-                            }} 
-                          />
+                        <div key={p.id} style={{ textAlign: 'center', backgroundColor: '#fff', padding: '5px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', position: 'relative' }}>
+                          {estaTrancado && <span style={{ position: 'absolute', top: '5px', right: '5px', fontSize: '0.8rem' }}>🔒</span>}
+                          <img src={p.imagem} alt={p.nome} style={{ width: '100%', height: '80px', objectFit: 'cover', borderRadius: '5px', filter: estaTrancado ? 'grayscale(100%)' : 'none', opacity: estaTrancado ? 0.6 : 1 }} />
                           <p style={{ fontSize: '0.7rem', fontWeight: 'bold', margin: '5px 0' }}>{p.nome}</p>
                           <span style={{ fontSize: '0.6rem', color: '#666' }}>({p.categoria})</span>
                         </div>
                       );
                     })}
-
                   </div>
                 </div>
               ))}
@@ -360,7 +343,6 @@ function App() {
         
       </main>
 
-      {/* FOOTER DO CARRINHO */}
       {carrinho.length > 0 && (
        <footer className="footer-carrinho">
           {carrinhoAberto && (
@@ -377,36 +359,16 @@ function App() {
                       <span className="nome-item-revisao">{item.nome}</span>
                       <strong className="preco-item-revisao">R$ {item.preco.toFixed(2)}</strong>
                     </div>
-
-                    {/* BOTÃO DA LIXEIRA - IGUAL À FOTO */}
-                    <button 
-                      className="btn-remover-item" 
-                      onClick={() => removerDoCarrinho(item.id_unico)}
-                    >
-                      🗑️
-                    </button>
+                    <button className="btn-remover-item" onClick={() => removerDoCarrinho(item.id_unico)}>🗑️</button>
                   </li>
                 ))}
               </ul>
 
               <div className="dados-cliente">
                 <h4>Dados para Entrega</h4>
-                <input 
-                  type="text" 
-                  placeholder="Seu Nome" 
-                  value={cliente.nome} 
-                  onChange={(e) => setCliente({...cliente, nome: e.target.value})} 
-                />
-                <input 
-                  type="text" 
-                  placeholder="Endereço Completo" 
-                  value={cliente.endereco} 
-                  onChange={(e) => setCliente({...cliente, endereco: e.target.value})} 
-                />
-                <select 
-                  value={cliente.pagamento} 
-                  onChange={(e) => setCliente({...cliente, pagamento: e.target.value})}
-                >
+                <input type="text" placeholder="Seu Nome" value={cliente.nome} onChange={(e) => setCliente({...cliente, nome: e.target.value})} />
+                <input type="text" placeholder="Endereço Completo" value={cliente.endereco} onChange={(e) => setCliente({...cliente, endereco: e.target.value})} />
+                <select value={cliente.pagamento} onChange={(e) => setCliente({...cliente, pagamento: e.target.value})}>
                   <option value="Pix">Pix</option>
                   <option value="Cartão">Cartão</option>
                   <option value="Dinheiro">Dinheiro</option>
@@ -425,7 +387,6 @@ function App() {
           </button>
         </footer>
       )}
-
     </div>
   )
 }
