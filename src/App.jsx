@@ -18,6 +18,7 @@ function App() {
     '2026-04-04', //sábado
     '2026-04-05', //domingo
     '2026-04-21', // Tiradentes
+    '2026-03-29',
   ];
 
   // --- LÓGICA DE DATA PARA BLOQUEIO ---
@@ -170,7 +171,7 @@ function App() {
             background: '#fff3cd', color: '#856404', padding: '10px', 
             borderRadius: '8px', textAlign: 'center', marginBottom: '15px', border: '1px solid #ffeeba'
           }}>
-            📍 Devido ao feriado, não estamos recebendo pedidos hoje.
+            📍 Não estamos recebendo pedidos hoje.
           </div>
         )}
 
@@ -240,15 +241,14 @@ function App() {
           </h2>
 
           {produtosExibidosVenda.map((item) => {
-          const diasLiberadosSobr = ["Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
+            const diasLiberadosSobr = ["Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
 
-          // MUDANÇA: Agora o liberadoVenda também checa se o restaurante NÃO está fechado hoje
-          const liberadoVenda = 
-            !estaFechadoHoje && (
-              !item.dia || 
-              item.dia === hojeGlobal || 
-              (item.categoria === "Sobremesas" && diasLiberadosSobr.includes(hojeGlobal))
-            );
+            const liberadoVenda = 
+              !estaFechadoHoje && (
+                !item.dia || 
+                item.dia === hojeGlobal || 
+                (item.categoria === "Sobremesas" && diasLiberadosSobr.includes(hojeGlobal))
+              );
 
             return (
               <div key={item.id} className="card-produto-compacto" style={{ opacity: liberadoVenda ? 1 : 0.8 }}>
@@ -302,38 +302,57 @@ function App() {
             );
           })}
 
+          {/* AJUSTE AQUI: Cardápio Semanal com lógica de Feriado */}
           {categoria === "Marmitas" && verSemana && (
             <div className="cardapio-semanal-expansivel" style={{ marginTop: '20px', padding: '15px', backgroundColor: '#fdf2f0', borderRadius: '12px', border: '1px solid #d66458' }}>
-              <h4 style={{ color: '#d66458', marginBottom: '15px' }}>📅 Conferência do Cardápio Semanal - 30 de março a 02 de abril</h4>
-              {diasSemana.map(diaSemana => (
-                <div key={diaSemana} style={{ marginBottom: '20px', borderBottom: '1px dashed #ccc', paddingBottom: '15px' }}>
-                  <h5 style={{ margin: '0 0 10px 0', color: '#333', fontSize: '1.1rem' }}>
-                    {diaSemana} {diaSemana === hojeGlobal ? "(HOJE ⭐)" : ""}
-                  </h5>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))', gap: '10px' }}>
-                    {produtos.filter(p => {
-                      if (p.dia === diaSemana) return true;
-                      const diasExtrasSobremesa = ["Quinta-feira", "Sexta-feira", "Sábado"]; 
-                      if (p.categoria === "Sobremesas" && diasExtrasSobremesa.includes(diaSemana)) return true;
-                      return false;
-                    }).map(p => {
-                      const diasLiberadosSobr = ["Quinta-feira", "Sexta-feira", "Sábado", "Domingo"]; 
-                      const estaTrancado = 
-                        (p.categoria === "Sobremesas" && !diasLiberadosSobr.includes(diaSemana)) ||
-                        (p.categoria === "Adicionais" && diaSemana !== "Domingo");
+              <h4 style={{ color: '#d66458', marginBottom: '15px' }}>📅 Conferência do Cardápio Semanal</h4>
+              {diasSemana.map(diaSemana => {
+                
+                // Lógica para descobrir a data exata de cada dia da semana exibido
+                const hoje = new Date();
+                const indiceHoje = hoje.getDay();
+                const diasDeSemanaNomes = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+                const indiceAlvo = diasDeSemanaNomes.indexOf(diaSemana);
+                const diferenca = indiceAlvo - indiceHoje;
+                const dataReferencia = new Date();
+                dataReferencia.setDate(hoje.getDate() + diferenca);
+                const dataISO = dataReferencia.toISOString().split('T')[0];
+                
+                // Verifica se este dia específico está na sua lista de feriados
+                const diaEstaFechado = datasFechado.includes(dataISO);
 
-                      return (
-                        <div key={p.id} style={{ textAlign: 'center', backgroundColor: '#fff', padding: '5px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', position: 'relative' }}>
-                          {estaTrancado && <span style={{ position: 'absolute', top: '5px', right: '5px', fontSize: '0.8rem' }}>🔒</span>}
-                          <img src={p.imagem} alt={p.nome} style={{ width: '100%', height: '80px', objectFit: 'cover', borderRadius: '5px', filter: estaTrancado ? 'grayscale(100%)' : 'none', opacity: estaTrancado ? 0.6 : 1 }} />
-                          <p style={{ fontSize: '0.7rem', fontWeight: 'bold', margin: '5px 0' }}>{p.nome}</p>
-                          <span style={{ fontSize: '0.6rem', color: '#666' }}>({p.categoria})</span>
-                        </div>
-                      );
-                    })}
+                return (
+                  <div key={diaSemana} style={{ marginBottom: '20px', borderBottom: '1px dashed #ccc', paddingBottom: '15px', opacity: diaEstaFechado ? 0.6 : 1 }}>
+                    <h5 style={{ margin: '0 0 10px 0', color: diaEstaFechado ? '#d66458' : '#333', fontSize: '1.1rem' }}>
+                      {diaSemana} {diaSemana === hojeGlobal ? "(HOJE ⭐)" : ""}
+                      {diaEstaFechado && <span style={{ marginLeft: '10px', fontSize: '0.8rem', fontWeight: 'bold' }}>🚫 FECHADO (FERIADO)</span>}
+                    </h5>
+                    
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))', gap: '10px' }}>
+                      {produtos.filter(p => {
+                        if (p.dia === diaSemana) return true;
+                        const diasExtrasSobremesa = ["Quinta-feira", "Sexta-feira", "Sábado"]; 
+                        if (p.categoria === "Sobremesas" && diasExtrasSobremesa.includes(diaSemana)) return true;
+                        return false;
+                      }).map(p => {
+                        const diasLiberadosSobr = ["Quinta-feira", "Sexta-feira", "Sábado", "Domingo"]; 
+                        const estaTrancado = diaEstaFechado ||
+                          (p.categoria === "Sobremesas" && !diasLiberadosSobr.includes(diaSemana)) ||
+                          (p.categoria === "Adicionais" && diaSemana !== "Domingo");
+
+                        return (
+                          <div key={p.id} style={{ textAlign: 'center', backgroundColor: '#fff', padding: '5px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', position: 'relative' }}>
+                            {estaTrancado && <span style={{ position: 'absolute', top: '5px', right: '5px', fontSize: '0.8rem' }}>🔒</span>}
+                            <img src={p.imagem} alt={p.nome} style={{ width: '100%', height: '80px', objectFit: 'cover', borderRadius: '5px', filter: estaTrancado ? 'grayscale(100%)' : 'none', opacity: estaTrancado ? 0.6 : 1 }} />
+                            <p style={{ fontSize: '0.7rem', fontWeight: 'bold', margin: '5px 0' }}>{p.nome}</p>
+                            <span style={{ fontSize: '0.6rem', color: '#666' }}>({p.categoria})</span>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>
