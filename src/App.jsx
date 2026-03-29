@@ -325,7 +325,7 @@ function App() {
                   <div key={diaSemana} style={{ marginBottom: '20px', borderBottom: '1px dashed #ccc', paddingBottom: '15px', opacity: diaEstaFechado ? 0.6 : 1 }}>
                     <h5 style={{ margin: '0 0 10px 0', color: diaEstaFechado ? '#d66458' : '#333', fontSize: '1.1rem' }}>
                       {diaSemana} {diaSemana === hojeGlobal ? "(HOJE ⭐)" : ""}
-                      {diaEstaFechado && <span style={{ marginLeft: '10px', fontSize: '0.8rem', fontWeight: 'bold' }}>🚫 FECHADO (FERIADO)</span>}
+                      {diaEstaFechado && <span style={{ marginLeft: '10px', fontSize: '0.8rem', fontWeight: 'bold' }}>🚫 FECHADO</span>}
                     </h5>
                     
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))', gap: '10px' }}>
