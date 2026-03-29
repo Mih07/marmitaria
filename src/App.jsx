@@ -17,34 +17,34 @@ function App() {
   
   const produtos = [
     //SEGUNDA-FEIRA
-    { id: 101, dia:"Segunda-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Virada a Paulista. ", imagem: "/virada-paulista.png" },
-    { id: 102, dia:"Segunda-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e filé de frango empanado.", imagem: "/file-empanado.png" },
-    //{ id: 103, dia:"Segunda-feira", nome: "Opção 3", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e bife acebolado.", imagem: "/bife-acebolado.png" }, 
+    { id: 101, dia:"Segunda-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Frango ao molho. ", imagem: "/frango-molho.png" },
+    { id: 102, dia:"Segunda-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Carne de Panela.", imagem: "/carne-panela.png" },
+    { id: 103, dia:"Segunda-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, Omelete de queijo.", imagem: "/omelete-queijo.png" }, 
     
     //TERÇA-FEIRA
-    { id: 104, dia:"Terça-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Carne de panela. ", imagem: "/carne-panela.png" },
-    { id: 105, dia:"Terça-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Linguiça acebolada.", imagem: "/linguica-acebolada.png" },
-    { id: 106, dia:"Terça-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Omelete de queijo.", imagem: "/omelete-queijo.png" }, 
+    { id: 104, dia:"Terça-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Costela suina. ", imagem: "/costela-suina.png" },
+    { id: 105, dia:"Terça-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e File de Frango Acebolado.", imagem: "/linguica-acebolada.png" },
+    { id: 106, dia:"Terça-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Linguiça frita", imagem: "/linguica-frita.png" }, 
     
     //QUARTA-FEIRA
     { id: 107, dia:"Quarta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Feijoada Completa. ", imagem: "/feijoada.png" },
-    { id: 108, dia:"Quarta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Frango xadrez.", imagem: "/frango-xadrez.png" },
-    { id: 109, dia:"Quarta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Macarrão da Casa", imagem: "/macarrao-casa.png" }, 
+    { id: 108, dia:"Quarta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Strogonoff de Frango.", imagem: "/strogonoff-frango.png" },
+    { id: 109, dia:"Quarta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Tilápia Empanada", imagem: "/isca-tilapia.png" }, 
     
     //QUINTA-FEIRA
-    { id: 110, dia:"Quinta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Coxa Sobrecoxa assada. ", imagem: "/coxa-sobrecoxa-assada.png" },
-    { id: 111, dia:"Quinta-feira", nome: "Opção 2", precos: {P:24.00, M:28.00, G:30.00}, categoria:"Marmitas", destaque: false, desc:"Arroz feijão e Bife acebolado.", imagem:"/bife-acebolado.png"},
-    //{ id: 112, dia:"Quinta-feira", nome: "Opção 3", precos: {P:24.00, M:28.00, G:30.00}, categoria:"Marmitas", destaque: false, desc:"Arroz feijão e Bife acebolado.", imagem:"/bife-acebolado.png"},
+    { id: 110, dia:"Quinta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Frango Frito. ", imagem: "/frango-frito.png" },
+    { id: 111, dia:"Quinta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria:"Marmitas", destaque: false, desc:"Arroz feijão e Almondegas ao molho.", imagem:"/almondega-molho.png"},
+    { id: 112, dia:"Quinta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria:"Marmitas", destaque: true, desc:"Arroz feijão e Moqueca Baiana.", imagem:"/moqueca-baiana.png"},
     
     //SEXTA-FEIRA
-    { id: 113, dia:"Sexta-feira", nome: "Opção 1", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Rabada com polenta. ", imagem: "/rabada-polenta.png" },
-    { id: 114, dia:"Sexta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Lasanha de frango.", imagem: "/lasanha-frango.png" },
+    //{ id: 113, dia:"Sexta-feira", nome: "Opção 1", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Rabada com polenta. ", imagem: "/rabada-polenta.png" },
+    //{ id: 114, dia:"Sexta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Lasanha de frango.", imagem: "/lasanha-frango.png" },
    // { id: 115, dia:"Sexta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Crepioca de abobrinha.", imagem: "/crepioca-abrobrinha.png" }, 
 
     //SÁBADO
-    { id: 116, dia:"Sábado", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Feijoada Completa. ", imagem: "/feijoada.png" },
-    { id: 117, dia:"Sábado", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Parmegiana de Frango.", imagem: "/frango-parmegiana.png" },
-    { id: 118, dia:"Sábado", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Crepioca de queijo.", imagem: "/crepioca-queijo.png" },
+    //{ id: 116, dia:"Sábado", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Feijoada Completa. ", imagem: "/feijoada.png" },
+    //{ id: 117, dia:"Sábado", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Parmegiana de Frango.", imagem: "/frango-parmegiana.png" },
+    //{ id: 118, dia:"Sábado", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Crepioca de queijo.", imagem: "/crepioca-queijo.png" },
     
     //DOMINGO
     //{ id: 119, dia:"Domingo", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Sobrecoxa recheada ", imagem: "/sobrecoxa-recheada.png" },
@@ -116,13 +116,13 @@ function App() {
   const hojeGlobal = diasSemana[new Date().getDay()]; // <--- GRIFO: AQUI VOCÊ DEFINE O DIA ATUAL PARA TESTES (Ex: "Segunda-feira", "Terça-feira", etc)
 
   const acompanhamentosDaSemana = {
-    "Segunda-feira": "Farofa / couve / banana frita / creme de milho.",
-    "Terça-feira": "Farofa / batatas temperadas / legumes.",
-    "Quarta-feira": "Couve / farofa / vinagrete.",
-    "Quinta-feira": " Batata frita/virado de repolho.",
-    "Sexta-feira": "Batata frita.",
-    "Sábado": "Couve / farofa / vinagrete / batata palha.",
-    "Domingo": ""
+    "Segunda-feira": "Quiabo refogado / farofa / abobrinha.",
+    "Terça-feira": "Legumes refogado / creme de cebola / purê de batata.",
+    "Quarta-feira": "Vinagrete e farofa / batata palha / couve refogada.",
+    "Quinta-feira": " Legumes refogado / macarrão / farofa de banana",
+    "Sexta-feira": "",
+    //"Sábado": "",
+    //"Domingo": ""
   };
 
   return (
@@ -289,7 +289,7 @@ function App() {
           {/* LISTA DA SEMANA (Aparece aqui quando o botão é clicado) */}
           {categoria === "Marmitas" && verSemana && (
             <div className="cardapio-semanal-expansivel" style={{ marginTop: '20px', padding: '15px', backgroundColor: '#fdf2f0', borderRadius: '12px', border: '1px solid #d66458' }}>
-              <h4 style={{ color: '#d66458', marginBottom: '15px' }}>📅 Conferência do Cardápio Semanal - 23 a 28 de março</h4>
+              <h4 style={{ color: '#d66458', marginBottom: '15px' }}>📅 Conferência do Cardápio Semanal - 30 de março a 02 de abril</h4>
               {diasSemana.map(diaSemana => (
                 <div key={diaSemana} style={{ marginBottom: '20px', borderBottom: '1px dashed #ccc', paddingBottom: '15px' }}>
                   <h5 style={{ margin: '0 0 10px 0', color: '#333', fontSize: '1.1rem' }}>
