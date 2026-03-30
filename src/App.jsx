@@ -18,13 +18,13 @@ function App() {
     '2026-04-04', //sábado
     '2026-04-05', //domingo
     '2026-04-21', // Tiradentes
-    '2026-03-29',
+    
   ];
 
   // --- LÓGICA DE DATA PARA BLOQUEIO ---
-  const dataHojeISO = new Date().toISOString().split('T')[0];
-  const estaFechadoHoje = datasFechado.includes(dataHojeISO);
-
+  // Substitua a linha do toISOString por esta:
+const dataHojeISO = new Date().toLocaleDateString('en-CA'); 
+const estaFechadoHoje = datasFechado.includes(dataHojeISO);
   // --- DADOS ---
   const restaurante = { nome: "Marmitaria da Déia", cor: "#d66458", fone: "5511987593594" };
   
@@ -153,7 +153,7 @@ function App() {
               <span className="badge-status" style={{ backgroundColor: estaFechadoHoje ? '#777' : '#28a745' }}>
                 ● {estaFechadoHoje ? 'Fechado' : 'Aberto'}
               </span>
-              <span className="tempo-entrega">🕒 {estaFechadoHoje ? 'Feriado' : '30-45 min'}</span>
+              <span className="tempo-entrega">🕒 {estaFechadoHoje ? 'Hoje não abriremos' : '30-45 min'}</span>
             </div>
           </div>
           <div className="carrinho-header" onClick={() => setCarrinhoAberto(!carrinhoAberto)}>
