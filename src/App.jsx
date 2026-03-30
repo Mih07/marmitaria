@@ -211,7 +211,7 @@ function App() {
           ))}
         </nav>
 
-        <section className="lista-produtos">
+    <section className="lista-produtos">
   {['Marmitas', 'Adicionais', 'Sobremesas', 'Bebidas', 'Cervejas']
     .filter(cat => categoriaAtiva === 'Todos' || categoriaAtiva === cat)
     .map(categoria => {
@@ -302,13 +302,12 @@ function App() {
             );
           })}
 
-          {/* AJUSTE AQUI: Cardápio Semanal com lógica de Feriado */}
+          {/* LISTA SEMANAL ATUALIZADA - APENAS "FECHADO" */}
           {categoria === "Marmitas" && verSemana && (
             <div className="cardapio-semanal-expansivel" style={{ marginTop: '20px', padding: '15px', backgroundColor: '#fdf2f0', borderRadius: '12px', border: '1px solid #d66458' }}>
               <h4 style={{ color: '#d66458', marginBottom: '15px' }}>📅 Conferência do Cardápio Semanal</h4>
               {diasSemana.map(diaSemana => {
                 
-                // Lógica para descobrir a data exata de cada dia da semana exibido
                 const hoje = new Date();
                 const indiceHoje = hoje.getDay();
                 const diasDeSemanaNomes = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
@@ -318,13 +317,13 @@ function App() {
                 dataReferencia.setDate(hoje.getDate() + diferenca);
                 const dataISO = dataReferencia.toISOString().split('T')[0];
                 
-                // Verifica se este dia específico está na sua lista de feriados
                 const diaEstaFechado = datasFechado.includes(dataISO);
 
                 return (
                   <div key={diaSemana} style={{ marginBottom: '20px', borderBottom: '1px dashed #ccc', paddingBottom: '15px', opacity: diaEstaFechado ? 0.6 : 1 }}>
                     <h5 style={{ margin: '0 0 10px 0', color: diaEstaFechado ? '#d66458' : '#333', fontSize: '1.1rem' }}>
                       {diaSemana} {diaSemana === hojeGlobal ? "(HOJE ⭐)" : ""}
+                      {/* TEXTO ALTERADO AQUI EMBAIXO: Tirei o "(FERIADO)" */}
                       {diaEstaFechado && <span style={{ marginLeft: '10px', fontSize: '0.8rem', fontWeight: 'bold' }}>🚫 FECHADO</span>}
                     </h5>
                     
