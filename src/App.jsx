@@ -14,6 +14,7 @@ function App() {
 
     // Exemplo:datas que estarão fechado 'AAAA-MM-DD'
   const datasFechado = [
+    '2026-04-05', //domingo
     '2026-04-11', //sábado
     '2026-04-12', //domingo
     '2026-04-21', // Tiradentes
