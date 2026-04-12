@@ -32,7 +32,7 @@ const estaFechadoHoje = datasFechado.includes(dataHojeISO);
     { id: 103, dia:"Segunda-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, Omelete de queijo.", imagem: "/omelete-queijo.png" }, 
     
     //TERÇA-FEIRA
-    { id: 104, dia:"Terça-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Carne de panela com batata . ", imagem: "/carne-panela.png" },
+    { id: 104, dia:"Terça-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Carne de panela com batata . ", imagem: "/carnepanela-batata.png" },
     { id: 105, dia:"Terça-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Linguiça Acebolado.", imagem: "/linguica-acebolada.png" },
     { id: 106, dia:"Terça-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e crepioca de queijo com legumes.", imagem: "/crepioca-legumes.png" }, 
     
