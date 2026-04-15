@@ -43,7 +43,7 @@ const estaFechadoHoje = datasFechado.includes(dataHojeISO);
     
     //QUINTA-FEIRA
     { id: 110, dia:"Quinta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Frango Assado. ", imagem: "/frango-assado.png" },
-    { id: 111, dia:"Quinta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria:"Marmitas", destaque: false, desc:"Arroz feijão e Frango à parmegiana.", imagem:"/frango-parmegiana.png"},
+    { id: 111, dia:"Quinta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria:"Marmitas", destaque: false, desc:"Arroz Berinjela a parmegiana.", imagem:"/parmegiana-beringela.png"},
     { id: 112, dia:"Quinta-feira", nome: "Opção 3", precos: {P:24.00, M:28.00, G:30.00}, categoria:"Marmitas", destaque: true, desc:"Arroz feijão e Contra filé na manteiga", imagem:"/contrafile-manteiga.png"},
     
     //SEXTA-FEIRA
