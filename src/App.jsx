@@ -53,13 +53,13 @@ const estaFechadoHoje = datasFechado.includes(dataHojeISO);
 
     //SÁBADO
     { id: 116, dia:"Sábado", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Feijoada Completa. ", imagem: "/feijoada.png" },
-    { id: 117, dia:"Sábado", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Parmegiana de Frango.", imagem: "/frango-parmegiana.png" },
-    //{ id: 118, dia:"Sábado", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Crepioca de queijo.", imagem: "/crepioca-queijo.png" },
+    { id: 117, dia:"Sábado", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Strogonoff de Frango.", imagem: "/strogonoff-frango.png" },
+    { id: 118, dia:"Sábado", nome: "Opção 3", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Contra Filé acebolado.", imagem: "/contra-file-acebolado.png" },
     
     //DOMINGO
-    { id: 119, dia:"Domingo", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Sobrecoxa recheada ", imagem: "/sobrecoxa-recheada.png" },
-    { id: 120, dia:"Domingo", nome: "Opção 2", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Carne assada.", imagem: "/carne-assada.png" },
-    { id: 121, dia:"Domingo", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e Parmegiana de berinjela.", imagem: "/parmegiana-beringela.png" }, 
+    { id: 119, dia:"Domingo", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Lagarto ao Molho Madeira ", imagem: "/lagarto-madeira.png" },
+    { id: 120, dia:"Domingo", nome: "Opção 2", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Contra Filé acebolado.", imagem: "/contra-file-acebolado.png" },
+    { id: 121, dia:"Domingo", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão e Tulipinha Empanada.", imagem: "/tulipinha-empanado.png" }, 
 
     { id: 4, nome: "Coca-Cola", precoFixo: 6.00, categoria: "Bebidas", destaque: true, desc: "Lata 350ml gelada.", imagem: "/coca-cola.png" },
     { id: 5, nome: "Guaraná", precoFixo: 6.00, categoria: "Bebidas", destaque: false, desc: "Lata 350ml gelada.", imagem: "/guarana.png" },
@@ -133,8 +133,8 @@ const estaFechadoHoje = datasFechado.includes(dataHojeISO);
     "Quarta-feira": "Farofa / couve refogada.",
     "Quinta-feira": " Farofa / legumes cozido / batata frita.",
     "Sexta-feira": "Farofa / legumes cozido / batata frita.",
-    "Sábado": "Farofa / legumes cozido / batata frita.",
-    "Domingo": "Farofa / legumes cozido / batata frita.",
+    "Sábado": "Farofa / couve / batata palha",
+    "Domingo": "Feijão tropeiro / salada de maionese / vinagrete.",
   };
 
   return (
