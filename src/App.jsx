@@ -133,8 +133,8 @@ const estaFechadoHoje = datasFechado.includes(dataHojeISO);
     "Quarta-feira": "Farofa / couve refogada.",
     "Quinta-feira": " Farofa / legumes cozido / batata frita.",
     "Sexta-feira": "Farofa / legumes cozido / batata frita.",
-    "Sábado": "Farofa / couve / batata palha",
-    "Domingo": "Feijão tropeiro / salada de maionese / vinagrete.",
+    //"Sábado": "Farofa / couve / batata palha",
+    //"Domingo": "Feijão tropeiro / salada de maionese / vinagrete.",
   };
 
   return (
