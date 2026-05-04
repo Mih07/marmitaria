@@ -385,7 +385,8 @@ const estaFechadoHoje = datasFechado.includes(dataHojeISO);
                 <input type="text" placeholder="Endereço Completo" value={cliente.endereco} onChange={(e) => setCliente({...cliente, endereco: e.target.value})} />
                 <select value={cliente.pagamento} onChange={(e) => setCliente({...cliente, pagamento: e.target.value})}>
                   <option value="Pix">Pix</option>
-                  <option value="Cartão">Cartão</option>
+                  <option value="Cartão">Cartão de Débito</option>
+                  <option value="Cartão">Cartão de Crédito</option>
                   <option value="Dinheiro">Dinheiro</option>
                 </select>
               </div>
