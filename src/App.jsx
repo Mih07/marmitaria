@@ -121,6 +121,11 @@ const estaFechadoHoje = datasFechado.includes(dataHojeISO);
     const itensPedido = carrinho.map(item => `- ${item.nome}: R$ ${item.preco.toFixed(2)}`).join('\n');
     const mensagem = encodeURIComponent(`*NOVO PEDIDO* 📋\n------------------------------\n*Cliente:* ${cliente.nome}\n*Endereço:* ${cliente.endereco}\n*Pagamento:* ${cliente.pagamento}\n------------------------------\n*Itens:*\n${itensPedido}\n\n*Total: R$ ${total.toFixed(2)}*`);
     window.open(`https://wa.me/${restaurante.fone}?text=${mensagem}`, '_blank');
+     // 2. Limpa o carrinho (esvazia a lista)
+    setCarrinho([]); 
+
+    // 3. Fecha a janela de revisão do pedido
+    setCarrinhoAberto(false);
   };
 
   // --- LÓGICA DO CARDÁPIO DO DIA ---
@@ -385,8 +390,8 @@ const estaFechadoHoje = datasFechado.includes(dataHojeISO);
                 <input type="text" placeholder="Endereço Completo" value={cliente.endereco} onChange={(e) => setCliente({...cliente, endereco: e.target.value})} />
                 <select value={cliente.pagamento} onChange={(e) => setCliente({...cliente, pagamento: e.target.value})}>
                   <option value="Pix">Pix</option>
-                  <option value="Cartão">Cartão de Débito</option>
-                  <option value="Cartão">Cartão de Crédito</option>
+                  <option value="Cartão de Débito">Cartão de Débito</option>
+                  <option value="Cartão de Crédito">Cartão de Crédito</option>
                   <option value="Dinheiro">Dinheiro</option>
                 </select>
               </div>
