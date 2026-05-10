@@ -27,34 +27,34 @@ const estaFechadoHoje = datasFechado.includes(dataHojeISO);
   
   const produtos = [
     //SEGUNDA-FEIRA
-    { id: 101, dia:"Segunda-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Virado a Paulista. ", imagem: "/virada-paulista.png" },
-    { id: 102, dia:"Segunda-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Rocambole de carne moída.", imagem: "/rocambole-carne.png" },
-    { id: 103, dia:"Segunda-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, Omelete de queijo.", imagem: "/omelete-queijo.png" }, 
+    { id: 101, dia:"Segunda-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Carne de panela ", imagem: "/carne-panela.png" },
+    { id: 102, dia:"Segunda-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Panqueca de frango.", imagem: "/panqueca-frango.png" },
+    { id: 103, dia:"Segunda-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Omelete de queijo.", imagem: "/omelete-queijo.png" }, 
     
     //TERÇA-FEIRA
-    { id: 104, dia:"Terça-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Carne de panela com mandioca. ", imagem: "/carnepanela-mandioca.png" },
-    { id: 105, dia:"Terça-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Fricassê de frango.", imagem: "/fricasse-frango.png" },
-    { id: 106, dia:"Terça-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Calabresa com ovo.", imagem: "/calabresa.png" }, 
+    { id: 104, dia:"Terça-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Filé de frango ", imagem: "/file-grelhado.png" },
+    { id: 105, dia:"Terça-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Pernil em cubos.", imagem: "/pernil-cubos.png" },
+    { id: 106, dia:"Terça-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Crepioca de legumes.", imagem: "/crepioca-legumes.png" }, 
     
     //QUARTA-FEIRA
     { id: 107, dia:"Quarta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Feijoada Completa. ", imagem: "/feijoada.png" },
-    { id: 108, dia:"Quarta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Batata Recheada.", imagem: "/batata-recheada.png" },
-    { id: 109, dia:"Quarta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Crepioca de legumes e queijo.", imagem: "/crepioca-legumes.png" },  
+    { id: 108, dia:"Quarta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Abobrinha recheada.", imagem: "/abobrinha-recheada.png" },
+    { id: 109, dia:"Quarta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Steak de frango.", imagem: "/steak-frango.png" },  
     
     //QUINTA-FEIRA
-    { id: 110, dia:"Quinta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Espetinho de frango. ", imagem: "/espetinho-frango.png" },
-    { id: 111, dia:"Quinta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria:"Marmitas", destaque: false, desc:"Arroz, feijão, CHamburguer pizzaolo.", imagem:"/hamburguer-pizzaolo.png"},
-    { id: 112, dia:"Quinta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria:"Marmitas", destaque: true, desc:"Arroz feijão, Omelete", imagem:"/omelete.png"}, 
+    { id: 110, dia:"Quinta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Almôndegas de carne. ", imagem: "/almondega-molho.png" },
+    { id: 111, dia:"Quinta-feira", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria:"Marmitas", destaque: true, desc:"Arroz, feijão, Lasanha de frango.", imagem:"/lasanha-frango.png"},
+    { id: 112, dia:"Quinta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria:"Marmitas", destaque: false, desc:"Arroz feijão, Omelete surpresa", imagem:"/omelete.png"}, 
     
     //SEXTA-FEIRA
-    { id: 113, dia:"Sexta-feira", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Costela com batata. ", imagem: "/costela-batata.png" },
-    { id: 114, dia:"Sexta-feira", nome: "Opção 2", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Filé de frango parmegiana", imagem: "/frango-parmegiana.png" },
-    { id: 115, dia:"Sexta-feira", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Bife acebolada.", imagem: "/bife-acebolado.png" }, 
+    { id: 113, dia:"Sexta-feira", nome: "Opção 1", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Isca de tilápia. ", imagem: "/isca-tilapia.png" },
+    { id: 114, dia:"Sexta-feira", nome: "Opção 2", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão, Bisteca acebolada", imagem: "/bisteca-acebolada.png" },
+    { id: 115, dia:"Sexta-feira", nome: "Opção 3", precos: {P:24.00, M:28.00, G:30.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Bife grelhado.", imagem: "/bife-grelhado.png" }, 
 
     //SÁBADO
     { id: 116, dia:"Sábado", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Arroz, feijão, Feijoada Completa. ", imagem: "/feijoada.png" },
-    { id: 117, dia:"Sábado", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Strogonoff de Frango.", imagem: "/strogonoff-frango.png" },
-    { id: 118, dia:"Sábado", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Isca de tilápia empanada.", imagem: "/tilapia-empanada.png" },
+    { id: 117, dia:"Sábado", nome: "Opção 2", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Frango crocante.", imagem: "/frango-crocante.png" },
+    { id: 118, dia:"Sábado", nome: "Opção 3", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: false, desc: "Arroz, feijão e Linguiça assada.", imagem: "/linguica-assada.png" },
     
     //DOMINGO
     { id: 119, dia:"Domingo", nome: "Opção 1", precos: {P:22.00, M:25.00, G:28.00}, categoria: "Marmitas", destaque: true, desc: "Criação da Chef - Consulte a opção de hoje! ", imagem: "/criacao-chef.png" },
@@ -134,11 +134,11 @@ const estaFechadoHoje = datasFechado.includes(dataHojeISO);
 
   const acompanhamentosDaSemana = {
     "Segunda-feira": "Farofa / legumes refogado.",
-    "Terça-feira": "Farofa / legumes refogado.",
+    "Terça-feira": "Purê de batata / repolho refogado .",
     "Quarta-feira": "Farofa / couve refogada / vinagrete.",
-    "Quinta-feira": " Farofa / legumes refogado.",
-    "Sexta-feira": "Farofa / legumes refogado.",
-    "Sábado": "Farofa / legumes refogado.",
+    "Quinta-feira": " Macarrão caipira / batata frita.",
+    "Sexta-feira": "Mandioca frita / legumes cozido.",
+    "Sábado": "Couve / Farofa / macarrão.",
     //"Domingo": "Feijão tropeiro / salada de maionese / vinagrete.",
   };
 
@@ -307,7 +307,7 @@ const estaFechadoHoje = datasFechado.includes(dataHojeISO);
           {/* LISTA SEMANAL ATUALIZADA - APENAS "FECHADO" */}
           {categoria === "Marmitas" && verSemana && (
             <div className="cardapio-semanal-expansivel" style={{ marginTop: '20px', padding: '15px', backgroundColor: '#fdf2f0', borderRadius: '12px', border: '1px solid #d66458' }}>
-              <h4 style={{ color: '#d66458', marginBottom: '15px' }}>📅 Conferência do Cardápio Semanal- 04/05 à 10/05</h4>
+              <h4 style={{ color: '#d66458', marginBottom: '15px' }}>📅 Conferência do Cardápio Semanal- 11/05 à 17/05</h4>
               {diasSemana.map(diaSemana => {
                 
                 const hoje = new Date();
