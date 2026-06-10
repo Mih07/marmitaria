@@ -150,7 +150,6 @@ const estaFechadoHoje = datasFechado.includes(dataHojeISO);
           <img src="/logo.png" alt="Logo" className="logo-restaurante" />
           <div className="header-info">
             <h1>{restaurante.nome}</h1>
-            <p className="endereco-restaurante">📍 Rua José Bonin, 204 - Monte Serrat - Itupeva/SP {restaurante.endereco}</p>
 
             <div className="status-container">
               {/* MUDANÇA: Status muda de cor e texto se estiver fechado */}
@@ -158,6 +157,7 @@ const estaFechadoHoje = datasFechado.includes(dataHojeISO);
                 ● {estaFechadoHoje ? 'Fechado' : 'Aberto'}
               </span>
               <span className="tempo-entrega">🕒 {estaFechadoHoje ? 'Hoje não abriremos' : '30-45 min'}</span>
+              <p className="endereco-restaurante">📍 Rua José Bonin, 204 - Monte Serrat - Itupeva/SP {restaurante.endereco}</p>
             </div>
           </div>
           <div className="carrinho-header" onClick={() => setCarrinhoAberto(!carrinhoAberto)}>
