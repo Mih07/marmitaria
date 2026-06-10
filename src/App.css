@@ -35,6 +35,11 @@ body {
 
 .header-content { display: flex; align-items: center; gap: 20px; }
 
+.endereco-restaurante {
+  font-size: 0.9rem; 
+  color: #666; 
+  margin: 5px 0 0;
+}
 .logo-restaurante {
   width: 70px; height: 70px;
   border-radius: 50%; border: 3px solid white;
